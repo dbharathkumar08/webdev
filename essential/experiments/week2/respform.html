@@ -1,0 +1,112 @@
+﻿    <!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Responsive Form</title>
+        <link rel="stylesheet" type="text/css" href="../../css/respform.css" />
+    </head>
+    <body>
+        <div class="container">
+       
+        <header>
+        <h1>Fixed Header</h1>    
+            <nav>
+                <a href="#">Home</a> |
+                <a href="#">Experiments</a> |
+                <a href="#">Project</a> |
+                <a href="#">Story Line</a> |
+                <a href="#">About Me</a> |
+                <a href="#">Resources</a> |
+            </nav>
+            <a href="#menu" id="menu-link">Menu</a>
+        </header>
+        <hr />
+        <main>
+        <div>
+            <label class="field-label">Name:</label>
+            <div class="field">
+                <input type="text" />
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-6">
+                    <p>
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                    </p>
+                </div>
+                <div class="col-6">
+                    <p>
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                    </p>
+                </div>
+            </div>
+        
+            <p>
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            </p>
+            <p>
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            </p>
+            <p>
+                <img src="../../images/img2.jpg" border="0" alt="null" class="respimg" />
+            </p>
+        
+            <a name="menu"></a>
+            <nav id="small-menu">
+                <a href="#">Home</a> <br />
+                <a href="#">Experiments</a> <br />
+                <a href="#">Project</a> <br />
+                <a href="#">Story Line</a> <br />
+                <a href="#">About Me</a> <br />
+                <a href="#">Resources</a> 
+            </nav>
+        </main>
+             <h1>Responsive Form Design without Bootsrap</h1>
+            <h3>About the Experiment</h3>
+            <p>
+                Here I have created a responsive form design with a fixed header by using simple CSS. The form elements like textbox, columns will adjuxt themselves when the size is reduced from Desktop to Tablet to Mobile device. Also I have created a resonsive menu which somewhat changes to dropdown menu when the size is reduced. Also the Image in the form changes its size according to the screen size.
+            </p>
+            <h1>Code Snippet</h1>
+                    <!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">@media</span> <span style="color: #6ab825; font-weight: bold">screen</span> <span style="color: #6ab825; font-weight: bold">and</span> <span style="color: #d0d0d0">(</span><span style="color: #6ab825; font-weight: bold">max-width</span><span style="color: #d0d0d0">:</span> <span style="color: #6ab825; font-weight: bold">500px</span><span style="color: #d0d0d0">){</span>
+            <span style="color: #447fcf; text-decoration: underline">.field-label</span> <span style="color: #d0d0d0">{</span>
+                <span style="color: #6ab825; font-weight: bold">float</span><span style="color: #d0d0d0">:</span><span style="color: #6ab825; font-weight: bold">none</span><span style="color: #d0d0d0">;</span>
+            <span style="color: #d0d0d0">}</span>
+            <span style="color: #447fcf; text-decoration: underline">.container</span> <span style="color: #d0d0d0">{</span>
+                <span style="color: #6ab825; font-weight: bold">width</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">300px</span><span style="color: #d0d0d0">;</span>
+                <span style="color: #6ab825; font-weight: bold">margin</span><span style="color: #d0d0d0">:</span> <span style="color: #6ab825; font-weight: bold">auto</span><span style="color: #d0d0d0">;</span>
+            <span style="color: #d0d0d0">}</span>
+            <span style="color: #447fcf; text-decoration: underline">.row</span> <span style="color: #d0d0d0">{</span>
+                <span style="color: #6ab825; font-weight: bold">padding-top</span><span style="color: #d0d0d0">:</span><span style="color: #3677a9">100px</span><span style="color: #d0d0d0">;</span>
+            <span style="color: #d0d0d0">}</span>
+            <span style="color: #6ab825; font-weight: bold">body</span> <span style="color: #6ab825; font-weight: bold">header</span> <span style="color: #6ab825; font-weight: bold">nav</span> <span style="color: #d0d0d0">{</span>
+                <span style="color: #6ab825; font-weight: bold">display</span><span style="color: #d0d0d0">:</span> <span style="color: #6ab825; font-weight: bold">none</span><span style="color: #d0d0d0">;</span>
+            <span style="color: #d0d0d0">}</span>
+            <span style="color: #447fcf">#menu-link</span><span style="color: #d0d0d0">,</span> <span style="color: #447fcf">#small-menu</span> <span style="color: #d0d0d0">{</span>
+                <span style="color: #6ab825; font-weight: bold">display</span><span style="color: #d0d0d0">:</span><span style="color: #6ab825; font-weight: bold">block</span><span style="color: #d0d0d0">;</span>
+            <span style="color: #d0d0d0">}</span>
+            <span style="color: #6ab825; font-weight: bold">main</span><span style="color: #d0d0d0">{</span>
+                <span style="color: #6ab825; font-weight: bold">padding-top</span><span style="color: #d0d0d0">:</span><span style="color: #3677a9">100px</span><span style="color: #d0d0d0">;</span>
+            <span style="color: #d0d0d0">}</span>
+            <span style="color: #6ab825; font-weight: bold">body</span> <span style="color: #6ab825; font-weight: bold">header</span><span style="color: #d0d0d0">{</span>
+                <span style="color: #6ab825; font-weight: bold">padding-top</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">0px</span><span style="color: #d0d0d0">;</span>
+                <span style="color: #6ab825; font-weight: bold">margin-top</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">0px</span><span style="color: #d0d0d0">;</span>
+                <span style="color: #6ab825; font-weight: bold">position</span><span style="color: #d0d0d0">:</span><span style="color: #6ab825; font-weight: bold">fixed</span><span style="color: #d0d0d0">;</span>
+                <span style="color: #6ab825; font-weight: bold">width</span><span style="color: #d0d0d0">:</span><span style="color: #3677a9">600px</span><span style="color: #d0d0d0">;</span>
+                <span style="color: #6ab825; font-weight: bold">background-image</span><span style="color: #d0d0d0">:</span><span style="color: #ffa500">url(&quot;../../images/gbg.jpg&quot;)</span><span style="color: #d0d0d0">;</span>    
+            <span style="color: #d0d0d0">}</span>    
+            <span style="color: #d0d0d0">}</span>
+            </pre></div>
+            <p>
+                This is the code snippet (CSS) for mobile screen size. When the size is max 500px, the position of header is fixed and the background is same as the original background so that the header is not transparent and user can scroll up and down. Also for this size, the navigation links are hidden and instead a menu link is shown which acts like a dropdown menu. The body row is pushed down the fixed header.
+            </p>
+            <h2>Reference:</h2>
+            <h4>Prof.Jose's Lecture</h4>
+            <iframe width="536" height="315" src="https://www.youtube.com/embed/0qtDzdavqdQ"></iframe> 
+            <h2>Source</h2>
+             <p>
+                <div class="button-link"><a href="../../fileview/Default.aspx?~/experiments/week2/respform.html" target="_blank">View Source</a></div>
+                <div class="button-link"><a href="../../fileview/Default.aspx?~/css/respform.css" target="_blank">View CSS</a></div>
+            </p>
+        </div>
+        
+    </body>
+    </html>

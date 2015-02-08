@@ -1,0 +1,5 @@
+﻿animationb.html			CSS Animation
+bootstrap-use.html		Having Fun with Bootstrap
+carousel.html			Carousel
+randd.html				Image Drag and Resize using jQuery-javascript
+respform.html			Responsive form without using Bootstrap

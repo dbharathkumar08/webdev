@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Floating Content</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+    
+    <link rel="stylesheet" type="text/css" href="../../css/float.css" />
+</head>
+<body>
+    <div id="fl_menu">
+        <div class="label">Weather Widgets</div>
+        <div class="menu">
+            <a href="#" class="menu_item"><img src="../../images/raindrops2.png" height="40" width="40" /></a>
+            <a href="#" class="menu_item"><img src="../../images/rainy12.png" height="40" width="40" /></a>
+            <a href="#" class="menu_item"><img src="../../images/river3.png" height="40" width="40" /></a>
+            <a href="#" class="menu_item"><img src="../../images/snowflake3.png" height="40" width="40" /></a>
+            <a href="#" class="menu_item"><img src="../../images/sun79.png" height="40" width="40" /></a>
+            <a href="#" class="menu_item"><img src="../../images/windy9.png" height="40" width="40" /></a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Floating Menu</h1>
+        <h2>About The Experiment</h2>
+        <p>
+            In this experiment I have tried creating cool floating menu that flows up and down as we scroll through the page. Also when user hover over the menu, other sub-options fade in and fade out.
+        </p>
+    </div>
+    <div class="content">
+        <h1>Weather Forecast</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consequat nunc in nibh feugiat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. In lacinia sodales commodo. Nam lorem enim, facilisis ut iaculis ac, mattis non diam. Cras nec nibh vel lacus aliquet mattis. Nunc dapibus, lectus at molestie laoreet, sem velit aliquet velit, at consectetur diam neque vitae erat. Pellentesque justo dui, ullamcorper ac pulvinar a, convallis a nisi. Curabitur luctus, nunc quis varius tincidunt, quam lorem consectetur felis, eu congue tellus justo non velit. Etiam eget velit lacus. Pellentesque mollis luctus risus, sit amet blandit nulla accumsan nec. Nunc eu iaculis lorem. Aenean porta venenatis ultrices. Suspendisse et leo id ligula suscipit convallis sodales in enim. Ut iaculis ligula et tellus tristique consectetur. Cras mauris leo, lacinia vel pretium sagittis, lobortis ac risus. Cras turpis felis, accumsan nec placerat ac, gravida adipiscing metus.</p>
+        <p><img src="../../images/map.png" /></p>
+        <p>Etiam ultrices luctus semper. Integer convallis rutrum sollicitudin. Fusce vestibulum rhoncus pharetra. Etiam quam tortor, blandit in euismod egestas, semper pellentesque est. Donec rhoncus arcu vitae odio eleifend vitae varius quam commodo. Suspendisse potenti. Cras elit sapien, luctus congue pharetra faucibus, pulvinar quis dui. Nulla in venenatis ante. Aenean a neque nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse pretium aliquam pellentesque. Fusce a lectus diam, vitae molestie ligula. Aliquam sed quam lectus, sit amet egestas tortor. Vestibulum consectetur sodales erat vel sagittis. Nunc arcu leo, pretium ac porttitor sed, pellentesque quis metus. Etiam eget diam dolor. Cras et leo eget purus rutrum tincidunt sodales ac urna. In aliquam rhoncus lorem sit amet malesuada.</p>
+        <p>Cras porta facilisis vestibulum. Curabitur commodo dolor eget odio elementum pretium. Maecenas congue diam ut augue ullamcorper vulputate. Duis feugiat turpis in urna mattis quis sagittis orci imperdiet. Aenean pulvinar commodo sapien, id cursus nibh dignissim quis. Maecenas id nulla lectus, bibendum faucibus massa. Vivamus iaculis orci non risus condimentum egestas. Etiam vehicula, dui id aliquam tempor, nunc est volutpat mi, in ullamcorper est justo sed nisl. Proin tortor massa, tempor ac sodales ut, ornare sit amet magna. Nam nisl diam, cursus id viverra vel, luctus bibendum ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec luctus neque et dolor fringilla imperdiet. Sed eu lorem turpis. Ut laoreet imperdiet urna, non sodales felis adipiscing vel. Nunc tincidunt, velit id tristique dignissim, mauris felis condimentum felis, sed aliquet arcu sapien in magna. Integer tincidunt magna ut nulla mollis eget vestibulum tortor dapibus.</p>
+        
+    </div>
+    <div>
+        <h2>Code Snippet</h2>
+        <pre>
+function FloatMenu(){<br />
+    var scrollAmount=$(document).scrollTop();<br />
+    var newPosition=menuPosition+scrollAmount;<br />
+    if($(window).height()&lt;$fl_menu.height()+$fl_menu_menu.height()){<br />
+        $fl_menu.css("top",menuPosition);<br />
+    } 
+    else {<br />
+        $fl_menu.stop().animate({top: newPosition}, $float_speed, $float_easing);<br />
+    }<br />
+}
+        </pre>
+        <p>
+            Here the function calculates the top scrolling amount and with reference to that, relative scroll amount is calculated. If that amount is greater than preset bar, menu is animated to new position.
+        </p>
+    </div>
+    <h2>References</h2>
+    <h3><a href="http://www.warpconduit.net/2009/10/07/create-a-floating-menu-with-jquery/" target="_blank">Floating Menu Tutorial</a></h3>
+    <h2>Source Files</h2>
+    <button><a href="../../fileview/Default.aspx?~/experiments/week3/float.html" target="_blank" >HTML File</a></button>
+    <button><a href="../../fileview/Default.aspx?~/css/float.css" target="_blank">CSS File</a></button>
+    <button><a href="../../fileview/Default.aspx?~/experiments/week3/js/floating.js" target="_blank" >JS File</a></button>
+    <script src="js/floating.js" type="text/javascript"></script>
+    
+</body>
+</html>

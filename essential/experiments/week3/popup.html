@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Site Title</title>
+    
+    <!-- Include jQuery -->
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+    <!-- Include jQuery Popup Overlay -->
+    <script src="http://vast-engineering.github.io/jquery-popup-overlay/jquery.popupoverlay.js"></script>
+    
+    <script src="js/popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/demo.css" />
+</head>
+<body>
+    <h1>
+        Popup Experiment
+    </h1>
+    <h2>
+        About The Experiment
+    </h2>
+    <p>
+        In this experiment I have tried creating a popup through jQuery, which blurs the background while it is open. You can test it by clicking on the button below.
+    </p>
+    <!-- Add an optional button to open the popup -->
+    <button class="my_popup_open">Open popup</button>
+    <h2>Code Snippet</h2>
+    <pre>
+    $(document).ready(function () {
+    
+        // Initialize the plugin
+        $('#my_popup').popup({
+        transition: 'all 0.3s',
+        scrolllock: true // optional
+        });
+     });
+    </pre>
+    <p>
+        Here I have used the plugin for popup. It contains of popup function which is called when the button is clicked.
+    </p>
+    <!-- Add content to the popup -->
+    <div id="my_popup">
+
+        <form id="myform">
+            <p>Hi! This is popup! You can click anywhere to make me disappear :)</p>
+            <button class="my_popup_close">Close</button>
+        </form>
+        <!-- Add an optional button to close the popup -->
+        
+
+    </div>
+    <h2>References</h2>
+    <h3><a href="http://www.jqueryscript.net/lightbox/jQuery-Plugin-To-Popup-A-Modal-Window-with-Blurred-Background-BlurBox.html" target="_blank">Popup Tutorial</a></h3>
+    <h2>Source Files</h2>
+    <button><a href="../../fileview/Default.aspx?~/experiments/week3/popup.html" target="_blank" >HTML File</a></button>
+    <button><a href="../../fileview/Default.aspx?~/css/demo.css" target="_blank">CSS File</a></button>
+    <button><a href="../../fileview/Default.aspx?~/experiments/week3/js/popup.js" target="_blank" >JS File</a></button>
+</body>
+</html>

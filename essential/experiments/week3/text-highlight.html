@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Text Highlighter</title>
+    
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/highlight_text.js"></script>
+    <script type="text/javascript" src="js/myhighlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    
+    
+</head>
+<body>
+    <div>
+        <h2>Text Highlighter</h2>
+        <h3>About The Experiment</h3>
+        <p>In this experiment I have used javascript for highlighting input text from the paragraphs.It uses the plugin by Johann Burkard. Based on that plugin I have created my javascript file which makes use of the functions provided by that plugin.</p>
+    </div>
+    <div id="search">
+        <label>Enter Text to be searched:</label><br />
+        <input type="text" id="searchtext" />
+
+    </div>
+    <button id="srch">Search</button>
+    <div id="para">
+    <p>
+        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+    </p>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+        </div>
+    <div>
+        <h2>Code Snippet</h2>
+        <pre>
+$(function () {<br />
+$("#srch").bind("click", function() {<br />
+    // pull in the new value<br />
+    var searchTerm = $("#searchtext").val();<br />
+    // remove/update any old highlighted terms<br />
+    $("body").removeHighlight();<br />
+    // disable highlighting if empty<br />
+    if (searchTerm) {<br />
+        // highlight the new term<br />
+        $("body").highlight(searchTerm);<br />
+    }<br />
+    });<br />
+});
+        </pre>
+        <p>
+            Here jQuery first stores the value inserted in textbox in a variable. Thenk it removes all highlighted words from paragraphs through <i>removeHighlight()</i> function. After that it highlights the instances of inserted text through <i>highlight()</i> function.
+        </p>
+    </div>
+    <h2>References</h2>
+    <h3><a href="http://johannburkard.de/blog/programming/javascript/highlight-javascript-text-higlighting-jquery-plugin.html" target="_blank">Johann Burkard plugin</a></h3>
+    <h2>Source Files</h2>
+    <button><a href="../../fileview/Default.aspx?~/experiments/week3/text-highlight.html" target="_blank" >HTML File</a></button>
+    <button><a href="../../fileview/Default.aspx?~/css/highlight.css" target="_blank">CSS File</a></button>
+    <button><a href="../../fileview/Default.aspx?~/experiments/week3/js/myhighlight.js" target="_blank" >JS File</a></button>
+
+</body>
+</html>

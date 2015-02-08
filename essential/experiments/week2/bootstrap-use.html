@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Having Fun With Bootstrap</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+   <style type="text/css">
+   body { background-image:url("../../images/wall.jpg"); }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Having Fun With Bootstrap</h1>
+        <h3>About The Experiment</h3>
+        <div class="panel">
+    
+    
+        <p>
+            In this experiment I have tried my hands on Bootstrap framework. Here I have created an educational portal fot HTML,CSS,JavaScript and given it various CSS effects through Bootstrap.
+            I have made use of:
+            <ul>
+                <li><i>nav nav-tabs</i> for Navigation purpose</li>
+                <li><i>dropdown-toggle</i> for creating dropdown menu</li>
+                <li><i>embed-responsive-item</i> to include videos in webpage</li>
+                <li><i>panel</i> classes for creating Collapsable items</li>
+            </ul> 
+        </p>
+        </div>
+    <ul class="nav nav-tabs navbar-inverse" role="tablist">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Tutorials <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>                        
+          </ul>
+        </li>
+      </ul>
+        <br />
+        <div class="row">
+            <div class="col-md-2"></div>
+                <div class="col-md-9">
+                    <img src="../../images/html-icons.png" class ="img-responsive" />
+                </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+            <h3>Related Videos</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rvFdP8taVQo" height="300" width="350"></iframe>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/eX4iT8ZkoLc" height="300" width="350"></iframe>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/q8TSk4rKTOo" height="300" width="350"></iframe>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <p>
+                    <small>
+                    HTML5 is the latest evolution of the standard that defines HTML. The term represents two different concepts:
+                    It is a new version of the language HTML, with new elements, attributes, and behaviors, and a larger set of technologies that allows more diverse and powerful Web sites and applications. This set is sometimes called HTML5 & friends and often shortened to just HTML5.
+                    </small>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <p>
+                    <small>
+                   CSS3 is the latest evolution of the Cascading Style Sheets language and aims at extending CSS2.1. It brings a lot of long-awaited novelties, like rounded corners, shadows, gradients , transitions or animations, as well as new layouts like multi-columns, flexible box or grid layouts. Experimental parts are vendor-prefixed and should either be avoided in production environments, or used with extreme caution as both their syntax and semantics can change in the future.
+                    </small>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <p>
+                    <small>
+                    JQuery is a-n open source JavaScript library that simplifies the interaction between HTML and JavaScript.Its features include:
+                    Fully documented<br />
+                    Great community<br />
+                    Tons of plugins<br />
+                    Small size (23kb)<br />
+                    Everything works in IE 6+, Firefox 2+, Safari 3+, Chrome, and Opera 9+
+                    </small>
+                </p>
+            </div>
+        </div>
+        
+      
+      <h2>Details</h2>
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">HTML Course</a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse in">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+                <button type="button" class="btn btn-success">Register</button>
+            </div>
+           
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">CSS3 Course</a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+                <button type="button" class="btn btn-success">Register</button>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">JavaScript JQuery Course</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+                <button type="button" class="btn btn-success">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        <h2>Code Snippet</h2> 
+        <p>
+            <i>This is the HTML code for creating Navigational tabs and dropdown menu. I have made use of nav navbar-tabs class with navbar-inverse to make it black. To create dropdown menu I have used dropdown toggle class with dropdown menu</i>
+        </p>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;ul</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;nav nav-tabs navbar-inverse&quot;</span> <span style="color: #0000CC">role=</span><span style="background-color: #fff0f0">&quot;tablist&quot;</span><span style="color: #007700">&gt;</span>
+<span style="color: #007700">&lt;li</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;dropdown&quot;</span><span style="color: #007700">&gt;</span>
+<span style="color: #007700">&lt;a</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;dropdown-toggle&quot;</span> <span style="color: #0000CC">data-toggle=</span><span style="background-color: #fff0f0">&quot;dropdown&quot;</span> <span style="color: #0000CC">href=</span><span style="background-color: #fff0f0">&quot;#&quot;</span><span style="color: #007700">&gt;</span>
+Tutorials <span style="color: #007700">&lt;span</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;caret&quot;</span><span style="color: #007700">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+<span style="color: #007700">&lt;ul</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;dropdown-menu&quot;</span> <span style="color: #0000CC">role=</span><span style="background-color: #fff0f0">&quot;menu&quot;</span><span style="color: #007700">&gt;</span>
+</pre></div>
+        <p>
+            <i>This is the HTML code for creating Embedded video inside a webpage.</i>
+        </p>
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;iframe</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;embed-responsive-item&quot;</span> <span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;https://www.youtube.com/embed/rvFdP8taVQo&quot;</span> <span style="color: #0000CC">height=</span><span style="background-color: #fff0f0">&quot;300&quot;</span> <span style="color: #0000CC">width=</span><span style="background-color: #fff0f0">&quot;350&quot;</span><span style="color: #007700">&gt;&lt;/iframe&gt;</span>
+</pre></div>
+         <p>
+            <i>This is the HTML code for creating a collapsable panel. I have used the main panel clas and inside that I have made use if collapse class to create a collapsable item.</i>
+        </p>
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;panel panel-default&quot;</span><span style="color: #007700">&gt;</span>
+  <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;panel-heading&quot;</span><span style="color: #007700">&gt;</span>
+    <span style="color: #007700">&lt;h4</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;panel-title&quot;</span><span style="color: #007700">&gt;</span>
+    <span style="color: #007700">&lt;a</span> <span style="color: #0000CC">data-toggle=</span><span style="background-color: #fff0f0">&quot;collapse&quot;</span> <span style="color: #0000CC">data-parent=</span><span style="background-color: #fff0f0">&quot;#accordion&quot;</span> <span style="color: #0000CC">href=</span><span style="background-color: #fff0f0">&quot;#collapse2&quot;</span><span style="color: #007700">&gt;</span>CSS3 Course<span style="color: #007700">&lt;/a&gt;</span>
+    <span style="color: #007700">&lt;/h4&gt;</span>
+  <span style="color: #007700">&lt;/div&gt;</span>
+ <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">id=</span><span style="background-color: #fff0f0">&quot;collapse2&quot;</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;panel-collapse collapse&quot;</span><span style="color: #007700">&gt;</span>
+<span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;panel-body&quot;</span><span style="color: #007700">&gt;</span>
+</pre></div>
+    
+        <h3>
+            References
+        </h3>
+            <a href="http://www.w3schools.com/bootstrap/" class="btn btn-info" role="button" target="_blank">W3 Schools</a>
+        <h3>
+            Source Code
+        </h3>
+        <a href="../../fileview/Default.aspx?~/experiments/week2/bootstrap-use.html" class="btn btn-info" role="button" target="_blank">View HTML Source</a>
+    </div>
+    
+    <div class="modal-footer">CopyRight-Isha Shah</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿#fade,
+#fade_wrapper,
+#fade_background {
+  transition: all 0.3s;
+}
+#my_popup{
+    background-color:white;
+    height: 150px;
+    width:300px;
+    border:2px solid black;
+    align-items:center;
+    
+}
+#myform {
+    align-items:center;
+    margin-left:10px;
+    align-content:center;
+}
+button{
+    background:#0d5672;
+    border-radius:10px;
+    border-color:#ffffff;
+    height:30px;
+    width:100px;
+    text-align:center;
+    margin-bottom:5px;
+    
+}
+a{
+    text-decoration:none;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight:bold;
+}
+body {
+    background-image:url("../../images/gbg.jpg");
+    font-family:'Lucida Sans';
+    margin-left:50px;
+    margin-right:50px;
+    
+}
+pre {
+    border: 3px solid;
+    background-color: lightgray;
+    max-width:500px;
+    overflow-x:scroll;
+}

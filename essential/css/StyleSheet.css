@@ -1,0 +1,86 @@
+﻿body {
+    
+    background-image:url("bulb.jpg");
+    
+    
+    margin: 0;
+    padding: 0;
+}
+    ul.master_navigation
+    {
+        
+        margin:0;
+        padding: 0;
+        position : absolute;
+        margin-bottom:100px;
+    }
+
+    ul.master_navigation li
+    {
+        display: inline-block;
+        float : left;
+        padding: 0;
+    }
+    li:hover a{
+        background: cadetblue;
+        color: #fff;
+    }
+    li a
+    {
+        
+        display:block;
+	    min-width:120px;
+	    height: 40px;
+        margin-right: 1px;
+	    text-align: center;
+	    line-height: 40px;
+	    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	    color: #fff;
+	    background: #2f3036;
+	    text-decoration: none;
+        
+
+    }
+
+    
+
+    
+
+    p
+    {
+        
+        text-align: justify;
+    }
+    
+    #first{
+        margin-top: 50px;
+    }
+
+    .pad {
+        padding: 10px;
+    }
+    .profile_pic{
+        
+        background-image:url(../isha3.jpg);
+        background-size:cover;
+        display:inline-block;
+        width:400px;
+        height:500px;
+        position:center;
+        margin-top:5px;
+        margin-left:450px;
+    }
+    .snippet{
+        padding-top:10px;
+        margin-top:50px;
+    }
+    .mydiv{
+        border:1px #000 solid;
+    }
+    .ta{
+        width:700px;
+        height:300px;
+        border:2px solid lightgray;
+        padding:4px;
+    }
+

@@ -1,0 +1,29 @@
+﻿
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: green;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 1000px){
+    body{
+        background-color:blue;
+         }
+}
+ @media screen and (min-width: 1000px){
+     body{
+       background-color:red;
+        }
+ }
+  .snippet{
+        padding-top:10px;
+        margin-top:50px;
+    }
+    
+    .ta{
+        width:400px;
+        height:300px;
+        border:2px solid lightgray;
+        padding:4px;
+    }
+        

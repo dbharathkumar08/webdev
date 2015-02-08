@@ -1,0 +1,42 @@
+﻿    body {
+        background-image:url("bulb.jpg");
+        color: wheat;
+    }
+.snip {
+    position:static;
+    padding-top: 500px;
+}
+    .resizebleImage {
+            position:inherit;
+             
+            background: silver; 
+            height:200px;
+            width:200px;
+            overflow: hidden;
+            
+        }
+       
+         
+        .text {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 200px;
+            height: 0;
+            color: black;
+            text-align: center;    
+            background: rgba(255, 255, 255, 0.7);
+            transition: height 0.7s ease-out;    
+        }
+        .pic:hover > .text {
+            height: 150px;
+        }
+        .button-link {
+    padding: 10px 15px;
+    background: #4479BA;
+    color: #FFF;
+    width:100px;
+    float:left;
+    margin-right:10px;
+}
+

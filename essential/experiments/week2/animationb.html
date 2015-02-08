@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Animation Experience</title>
+    <link rel="stylesheet" type="text/css" href="../../css/animation1.css" />
+   
+</head>
+<body>
+  <header>
+    <h1>Animated bubbles upwards continuously</h1>
+  </header>
+    <div class="container">
+        <h3>About The Experiment</h3>
+        <p>
+            In this Experiment I have tried my hands on creating animation with CSS. These Bubbles also posses popping effect. Without using Javascript I have created bubbles animation using CSS Keyframes and Transform.
+        </p>
+        
+    </div>
+    <div class="snippet1">
+    <h3>HTML Snippet</h3>
+        <p>
+            Here The Html code indicated the classes beaker and bubble which have been given animation effects through CSS.
+        </p>
+        <p>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:800px;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;div</span> <span style="color: #0000CC">id=</span><span style="background-color: #fff0f0">&quot;beaker&quot;</span><span style="color: #007700">&gt;</span>
+    <span style="color: #007700">&lt;span</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;bubble&quot;</span><span style="color: #007700">&gt;</span>
+        <span style="color: #007700">&lt;span</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;glow&quot;</span><span style="color: #007700">&gt;</span> <span style="color: #007700">&lt;/span&gt;</span>
+    <span style="color: #007700">&lt;/span&gt;</span>
+    <span style="color: #007700">&lt;span</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;bubble1&quot;</span><span style="color: #007700">&gt;</span>
+        <span style="color: #007700">&lt;span</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;glow&quot;</span><span style="color: #007700">&gt;</span> <span style="color: #007700">&lt;/span&gt;</span>
+    <span style="color: #007700">&lt;/span&gt;</span>
+<span style="color: #007700">&lt;/div&gt;</span>
+</pre></td></tr></table></div>
+        </p>
+    </div>
+    <div class="snippet2">
+        <h3>CSS Snippet</h3>
+        <p>
+            Here I have scaled the bubbles as they go up with <i>bubbleUp</i> class.<br />
+            In addition to that, to make bubbles glow I have used <i>bubbleGlow</i> class.<br />
+            All this code can be used multiple times to create more than one bubbles.
+        </p>
+        <p>
+          <!-- HTML generated using hilite.me --><div class="para"><table><tr><td><pre class="pr"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">@-webkit-keyframes</span> <span style="color: #007700">greenPulse</span> {
+  <span style="color: #007700">0</span><span style="color: #333333">%</span> {box<span style="color: #333333">-</span>shadow<span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">0</span> <span style="color: #6600EE; font-weight: bold">0</span> <span style="color: #6600EE; font-weight: bold">30px</span> <span style="color: #6600EE; font-weight: bold">#4bbec8</span>}
+  <span style="color: #007700">50</span><span style="color: #333333">%</span> {box<span style="color: #333333">-</span>shadow<span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">0</span> <span style="color: #6600EE; font-weight: bold">0</span> <span style="color: #6600EE; font-weight: bold">80px</span> <span style="color: #6600EE; font-weight: bold">#4bbec8</span>}
+  <span style="color: #007700">100</span><span style="color: #333333">%</span> {box<span style="color: #333333">-</span>shadow<span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">0</span> <span style="color: #6600EE; font-weight: bold">0</span> <span style="color: #6600EE; font-weight: bold">30px</span> <span style="color: #6600EE; font-weight: bold">#4bbec8</span>}
+}
+
+<span style="color: #007700">div</span><span style="color: #0066BB; font-weight: bold">#beaker</span> <span style="color: #007700">span</span><span style="color: #BB0066; font-weight: bold">.glow</span> {
+  <span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">100</span><span style="color: #333333">%</span>;
+  <span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">100</span><span style="color: #333333">%</span>;
+  <span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">#4bbec8</span>;
+  <span style="color: #008800; font-weight: bold">position</span><span style="color: #333333">:</span><span style="color: #008800; font-weight: bold">relative</span>;
+  <span style="color: #008800; font-weight: bold">display</span><span style="color: #333333">:</span><span style="color: #008800; font-weight: bold">block</span>;
+  <span style="color: #008800; font-weight: bold">border</span><span style="color: #333333">-</span>radius<span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">200px</span>;
+  animation<span style="color: #333333">:</span>greenPulse <span style="color: #6600EE; font-weight: bold">2s</span> infinite;
+  <span style="color: #333333">-</span>webkit<span style="color: #333333">-</span>animation<span style="color: #333333">:</span>greenPulse <span style="color: #6600EE; font-weight: bold">2s</span> infinite;
+  <span style="color: #333333">-</span>moz<span style="color: #333333">-</span>animation<span style="color: #333333">:</span>greenPulse <span style="color: #6600EE; font-weight: bold">2s</span> infinite;
+  <span style="color: #333333">-</span>o<span style="color: #333333">-</span>animation<span style="color: #333333">:</span>greenPulse <span style="color: #6600EE; font-weight: bold">2s</span> infinite;
+}
+<span style="color: #008800; font-weight: bold">@-webkit-keyframes</span> <span style="color: #007700">bubbleUp</span> {
+  <span style="color: #007700">0</span><span style="color: #333333">%</span> {<span style="color: #008800; font-weight: bold">bottom</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">110px</span>;<span style="color: #333333">-</span>webkit<span style="color: #333333">-</span>transform<span style="color: #333333">:</span>scale(<span style="color: #333333">.</span><span style="color: #6600EE; font-weight: bold">9</span>);<span style="color: #008800; font-weight: bold">opacity</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">0</span>}
+  <span style="color: #007700">1</span><span style="color: #333333">%</span> {<span style="color: #008800; font-weight: bold">bottom</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">110px</span>;<span style="color: #333333">-</span>webkit<span style="color: #333333">-</span>transform<span style="color: #333333">:</span>scale(<span style="color: #333333">.</span><span style="color: #6600EE; font-weight: bold">3</span>);<span style="color: #008800; font-weight: bold">opacity</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">0</span>}
+  <span style="color: #007700">30</span><span style="color: #333333">%</span> {<span style="color: #008800; font-weight: bold">bottom</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">110px</span>;<span style="color: #333333">-</span>webkit<span style="color: #333333">-</span>transform<span style="color: #333333">:</span>scale(<span style="color: #333333">.</span><span style="color: #6600EE; font-weight: bold">8</span>);<span style="color: #008800; font-weight: bold">opacity</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">1</span>}
+  <span style="color: #007700">95</span><span style="color: #333333">%</span> {<span style="color: #008800; font-weight: bold">bottom</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">545px</span>;<span style="color: #333333">-</span>webkit<span style="color: #333333">-</span>transform<span style="color: #333333">:</span>scale(<span style="color: #333333">.</span><span style="color: #6600EE; font-weight: bold">3</span>);<span style="color: #008800; font-weight: bold">opacity</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">1</span>}
+  <span style="color: #007700">99</span><span style="color: #333333">%</span> {<span style="color: #008800; font-weight: bold">bottom</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">550px</span>;<span style="color: #333333">-</span>webkit<span style="color: #333333">-</span>transform<span style="color: #333333">:</span>scale(<span style="color: #6600EE; font-weight: bold">3</span>);<span style="color: #008800; font-weight: bold">opacity</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">0</span>}
+  <span style="color: #007700">100</span><span style="color: #333333">%</span> {<span style="color: #008800; font-weight: bold">bottom</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">110px</span>;<span style="color: #333333">-</span>webkit<span style="color: #333333">-</span>transform<span style="color: #333333">:</span>scale(<span style="color: #333333">.</span><span style="color: #6600EE; font-weight: bold">9</span>);<span style="color: #008800; font-weight: bold">opacity</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">0</span>}
+}
+<span style="color: #007700">div</span><span style="color: #0066BB; font-weight: bold">#beaker</span> <span style="color: #007700">span</span><span style="color: #BB0066; font-weight: bold">.bubble</span> {
+  <span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">#fff</span>;
+  <span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">80px</span>;
+  <span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">80px</span>;
+  <span style="color: #008800; font-weight: bold">position</span><span style="color: #333333">:</span><span style="color: #008800; font-weight: bold">absolute</span>;
+  <span style="color: #008800; font-weight: bold">display</span><span style="color: #333333">:</span><span style="color: #008800; font-weight: bold">block</span>;
+  <span style="color: #008800; font-weight: bold">left</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">150px</span>;
+  <span style="color: #008800; font-weight: bold">bottom</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">110px</span>;
+  <span style="color: #008800; font-weight: bold">border</span><span style="color: #333333">-</span>radius<span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">100px</span>; 
+  <span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:-</span>moz<span style="color: #333333">-</span>radial<span style="color: #333333">-</span>gradient(<span style="color: #008800; font-weight: bold">center</span> <span style="color: #6600EE; font-weight: bold">45</span>deg<span style="color: #333333">,</span> <span style="color: #008800; font-weight: bold">circle</span> closest<span style="color: #333333">-</span>corner<span style="color: #333333">,</span> rgba(<span style="color: #6600EE; font-weight: bold">75</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">190</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">200</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">0</span>)<span style="color: #333333">,</span> rgba(<span style="color: #6600EE; font-weight: bold">75</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">190</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">200</span><span style="color: #333333">,.</span><span style="color: #6600EE; font-weight: bold">1</span>)<span style="color: #333333">,</span> rgba(<span style="color: #6600EE; font-weight: bold">75</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">190</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">200</span><span style="color: #333333">,.</span><span style="color: #6600EE; font-weight: bold">3</span>)<span style="color: #333333">,</span> rgba(<span style="color: #6600EE; font-weight: bold">255</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">255</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">255</span><span style="color: #333333">,.</span><span style="color: #6600EE; font-weight: bold">7</span>));
+  <span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:-</span>webkit<span style="color: #333333">-</span>gradient(radial<span style="color: #333333">,</span> <span style="color: #008800; font-weight: bold">center</span> <span style="color: #008800; font-weight: bold">center</span><span style="color: #333333">,</span> <span style="color: #6600EE; font-weight: bold">0</span><span style="color: #333333">,</span> <span style="color: #008800; font-weight: bold">center</span> <span style="color: #008800; font-weight: bold">center</span><span style="color: #333333">,</span> <span style="color: #6600EE; font-weight: bold">100</span><span style="color: #333333">,</span> from(rgba(<span style="color: #6600EE; font-weight: bold">75</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">190</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">200</span><span style="color: #333333">,.</span><span style="color: #6600EE; font-weight: bold">2</span>))<span style="color: #333333">,</span> to(rgba(<span style="color: #6600EE; font-weight: bold">255</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">255</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">255</span><span style="color: #333333">,.</span><span style="color: #6600EE; font-weight: bold">7</span>)));
+  <span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:-</span>webkit<span style="color: #333333">-</span>gradient(<span style="color: #008800; font-weight: bold">center</span> <span style="color: #6600EE; font-weight: bold">45</span>deg<span style="color: #333333">,</span> <span style="color: #008800; font-weight: bold">circle</span> closest<span style="color: #333333">-</span>corner<span style="color: #333333">,</span> rgba(<span style="color: #6600EE; font-weight: bold">75</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">190</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">200</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">0</span>)<span style="color: #333333">,</span> rgba(<span style="color: #6600EE; font-weight: bold">75</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">190</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">200</span><span style="color: #333333">,.</span><span style="color: #6600EE; font-weight: bold">1</span>)<span style="color: #333333">,</span> rgba(<span style="color: #6600EE; font-weight: bold">75</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">190</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">200</span><span style="color: #333333">,.</span><span style="color: #6600EE; font-weight: bold">3</span>)<span style="color: #333333">,</span> rgba(<span style="color: #6600EE; font-weight: bold">255</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">255</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">255</span><span style="color: #333333">,.</span><span style="color: #6600EE; font-weight: bold">7</span>));
+  <span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:</span> <span style="color: #333333">-</span>ms<span style="color: #333333">-</span>radial<span style="color: #333333">-</span>gradient(<span style="color: #008800; font-weight: bold">center</span><span style="color: #333333">,</span> ellipse cover<span style="color: #333333">,</span> rgba(<span style="color: #6600EE; font-weight: bold">255</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">255</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">255</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">0</span>) <span style="color: #6600EE; font-weight: bold">0</span><span style="color: #333333">%,</span> rgba(<span style="color: #6600EE; font-weight: bold">9</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">133</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">167</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">0</span><span style="color: #333333">.</span><span style="color: #6600EE; font-weight: bold">1</span>) <span style="color: #6600EE; font-weight: bold">51</span><span style="color: #333333">%,</span> rgba(<span style="color: #6600EE; font-weight: bold">9</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">133</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">167</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">0</span><span style="color: #333333">.</span><span style="color: #6600EE; font-weight: bold">3</span>) <span style="color: #6600EE; font-weight: bold">71</span><span style="color: #333333">%,</span> rgba(<span style="color: #6600EE; font-weight: bold">9</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">133</span><span style="color: #333333">,</span><span style="color: #6600EE; font-weight: bold">167</span><span style="color: #333333">,.</span><span style="color: #6600EE; font-weight: bold">7</span>) <span style="color: #6600EE; font-weight: bold">100</span><span style="color: #333333">%</span>);
+  animation<span style="color: #333333">:</span>bubbleUp <span style="color: #6600EE; font-weight: bold">4s</span> infinite ease<span style="color: #333333">-</span>in<span style="color: #333333">-</span>out;
+  <span style="color: #333333">-</span>webkit<span style="color: #333333">-</span>animation<span style="color: #333333">:</span>bubbleUp <span style="color: #6600EE; font-weight: bold">4s</span> infinite ease<span style="color: #333333">-</span>in<span style="color: #333333">-</span>out;
+  <span style="color: #333333">-</span>o<span style="color: #333333">-</span>animation<span style="color: #333333">:</span>bubbleUp <span style="color: #6600EE; font-weight: bold">4s</span> infinite ease<span style="color: #333333">-</span>in<span style="color: #333333">-</span>out;
+  <span style="color: #333333">-</span>moz<span style="color: #333333">-</span>animation<span style="color: #333333">:</span>bubbleUp <span style="color: #6600EE; font-weight: bold">4s</span> infinite ease<span style="color: #333333">-</span>in<span style="color: #333333">-</span>out;
+}
+</pre></td></tr></table></div>
+
+        </p>
+        <h3>References</h3>
+        <p>
+            I have used the following tutorial to create this animation:
+            <a href="http://zurb.com/playground/css-boxshadow-experiments">Tutorial</a>
+        </p>
+        <h3>Source Code</h3>
+        <p>
+            <div class="button-link"><a href="../../fileview/Default.aspx?~/experiments/week2/animationb.html" target="_blank">View Source</a></div>
+            <div class="button-link1"><a href="../../fileview/Default.aspx?~/css/animation1.css" target="_blank">View CSS</a></div>
+        </p>
+        
+        <h3>Blog</h3>
+
+        <div class="button-link"><a href="../../fileview/default.aspx?~/blog_entries/blog1.htm" target="_blank">Blog</a></div>
+    </div>
+    
+    <div id="lab">
+        <img src="../../images/flask.png" />
+        <div id="beaker">
+            <span class="bubble">
+                <span class="glow"> </span>
+            </span>
+            <span class="bubble1">
+                <span class="glow"> </span>
+            </span>
+            <span class="bubble2">
+                <span class="glow"> </span>
+            </span>
+        </div>
+    </div>
+</body>
+</html>

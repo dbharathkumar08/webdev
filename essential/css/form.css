@@ -1,0 +1,50 @@
+﻿body{
+    background-image:url("bulb.jpg");
+}
+form
+{
+  width: 400px;
+  color: #3E4A49;
+  background-color: ThreeDLightShadow;
+  padding: 20px;
+  border: 2px solid #4899BE;
+  font-family: "Trebuchet MS", Arial, Helvetica, Sans-serif;
+  font-size: 0.8em;
+}
+label
+{
+  display: block;
+  float: left;
+  clear: left;
+  text-align: right;
+  width: 30%;
+  padding-top: 0.25em;
+  margin: 1em 5px 0 0;
+}
+#add2,#add3,#add4{
+    margin-left:125px;
+}
+input, select
+{
+  margin: 1em 0 0 0;
+  width: 50%;
+  border: 1px solid #FEF7D6;
+  padding: 2px;
+  
+}
+input:focus, select:focus
+{
+  border: 1px solid #4899BE;
+}
+#buttons
+{
+  text-align: right;
+  margin: -15px 0 -5px 0;
+}
+
+input.button
+{
+  width: auto;
+  background: #FFFFFF;
+  border: 2px solid #4899BE;
+}

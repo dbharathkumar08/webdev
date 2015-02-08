@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Playing Around with AJAX</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="ajax-demo.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/ajax-demo.css" />
+</head>
+<body>
+    <h1>Playing Around with AJAX-JQuery!!</h1>
+    <h2>About The Experiment</h2>
+    <p>In this experiment I have tried to use AJAX through JQuery. Here I have made a JSONP request to retrieve some information from remote page.Here the .ajax() function calls that page and stores the values in variables to display them on current HTML page.</p>
+    <button id="btn">Click Me</button>
+    <div id="info"></div>
+    <h2>
+        Code Snippet
+    </h2>
+    <pre class="brush: jscript; title: ; notranslate" title="">
+    $.ajax({
+    url: 'http://api.joind.in/v2.1/talks/10889',
+    data: {
+    format: 'json'
+    },
+    error: function() {
+    $('#info').html('&lt;p&gt;An error has occurred&lt;/p&gt;');
+    },
+    dataType: 'jsonp',
+    success: function(data) {
+    var $title = $('&lt;h1&gt;').text(data.talks[0].talk_title);
+    var $description = $('&lt;p&gt;').text(data.talks[0].talk_description);
+    $('#info')
+    .append($title)
+    .append($description);
+    },
+    type: 'GET'
+    });
+    </pre>
+    <h2>Description</h2>
+    <p>
+        In the snippet above, I’m using the second form of $.ajax(), which allows to specify the URL to which the request is sent as a property (url) of the object literal. Joind.in’s API accepts a JSONP request, so in the code above I have used the data property to define the format’s type that I want to obtain from the server as required by the API. However, the latter requires this data as part of the query string of a GET request, hence I’m also specifying the type property setting GET as its value. Finally, I wrote an error callback to display a message in case of error, and a success callback to display the title and the description of the talk in case of success.
+    </p>
+    <h2>References</h2>
+    <h3><a href="http://www.sitepoint.com/use-jquerys-ajax-function/" target="_blank">SitePoint</a></h3>
+    <h2>Source Files</h2>
+    <button><a href="../../fileview/Default.aspx?~/experiments/week3/ajax_example.html" target="_blank" >HTML File</a></button>
+    <button><a href="../../fileview/Default.aspx?~/css/ajax-demo.css" target="_blank">CSS File</a></button>
+    <button><a href="../../fileview/Default.aspx?~/experiments/week3/ajax-demo.js" target="_blank" >JS File</a></button>
+</body>
+</html>

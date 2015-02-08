@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Trying Out CSS Horizontal Navigation Bar</title>
+    <link rel="stylesheet" type="text/css" href="../../css/StyleSheet.css" />
+</head>
+<body>
+    <h2>About the Experiment:</h2>
+    <hr />
+    <h3>
+        <p>
+            In this experiment I have tried out Modifying Navigation links through CSS and also implemented it on My Site's Home page!!
+
+        </p>
+    </h3>
+    <hr />
+    <div>
+        <ul class="master_navigation" id="menu">
+            <li><a href="sitestatistics/" target="_blank">SiteStatistics</a></li>
+            <li><a href="statistics/" target="_blank">Statistics</a></li>
+            <li><a href="source/" target="_blank">Source</a></li>
+            <li><a href="search/" target="_blank">Search</a></li>
+            <li><a href="searchtree/" target="_blank">SearchTree</a></li>
+            <li><a href="textview/" target="_blank">TextView</a></li>
+            <li><a href="filelist.aspx" target="_blank">FileList</a></li>
+            <li><a href="autofile.aspx" target="_blank">AutoFile</a></li>
+            <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
+            <li><a href="blog/" target="_blank">Blog</a></li>
+            <li><a href="story/index.htm?../experiments/story.txt" target="_blank">Experiments</a></li>
+        </ul>
+    </div>
+    <hr />
+    <h3 class="snippet">Code Snippet:</h3>
+    <div class="mydiv" >
+        <textarea class="ta" >
+            ul.master_navigation li
+            {
+            display: inline-block;
+            float : left;
+            padding: 0;
+            }
+            li:hover a{
+            background: cadetblue;
+            color: #fff;
+            }
+            li a
+            {
+
+            display:block;
+            min-width:120px;
+            height: 40px;
+            margin-right: 1px;
+            text-align: center;
+            line-height: 40px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #fff;
+            background: #2f3036;
+            text-decoration: none;
+
+
+            }
+            </textarea>
+</div>
+    <a href="../../fileview/Default.aspx?~/experiments/html/CSSNavBar.html" target="_blank">
+        View Source
+    </a>
+    <a href="../../fileview/Default.aspx?~/css/StyleSheet.css" target="_blank">
+        View CSS
+    </a>
+    <hr />
+</body>
+</html>

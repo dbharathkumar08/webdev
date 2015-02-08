@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Validation</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="js/validation.js" type="text/javascript"></script>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/JTip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/validate.css" />
+    
+</head>
+<body>
+    <h2>Form Validation Using jQuery</h2>
+    <h3>About The Experiment</h3>
+    <p>Here I have created a form on which various validation tricks have been applied. They are as following:</p>
+    <ul>
+        <li>When you hover over the question mark near password field, it shows you requirements of ideal password</li>
+        <li>When you start typing in the password, it shows you the strength of the password</li>
+        <li>When you click on register button it matches both passwords and shows you wheather they match or not</li>
+    </ul>
+    
+        <form id="register">
+            
+            <label for="name" >Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" />
+            <br />
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" placeholder="xyz@abc.com" />
+            <br />
+            <label for="pwd1">Password:</label>
+            <span class="formInfo">
+                <a href="ajax.htm?width=375" class="jTip" id="one" name="Password must follow these rules:">?</a>
+            </span>
+            <input type="password" id="pwd1" />
+            <span id="result"></span>
+
+            <br />
+            <label for="pwd2">Password:</label>
+            <input type="password" id="pwd2" />
+            <br />
+            <input type="submit" id="sbmt" value="Register" />
+        </form>
+   
+       
+    <h2>References</h2>
+    <h3><a href="http://www.formget.com/password-strength-checker-in-jquery/" target="_blank">Password Strength Checker</a></h3>
+    <h2>Source Files</h2>
+    <button><a href="../../fileview/Default.aspx?~/experiments/week3/validation.html" target="_blank" >HTML File</a></button>
+    <button><a href="../../fileview/Default.aspx?~/css/validate.css" target="_blank">CSS File</a></button>
+    <button><a href="../../fileview/Default.aspx?~/experiments/week3/js/validation.js" target="_blank" >JS File</a></button>
+        
+</body>
+</html>

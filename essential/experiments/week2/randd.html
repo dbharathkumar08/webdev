@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Resizable and Draggable Image</title>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/dandr.css" />
+   
+</head>
+<body>
+<script type="text/javascript">
+
+        $(document).ready(function () {
+            $(".resizebleImage").resizable().parent().draggable();
+        });
+</script>
+    <h1>Image Drag And Resizing</h1>
+    <h3>About the Experiment</h3>
+    <p>
+        Here I have created the code to resize a given image. User can drag the image on screen anywhere as well he can resize the image by pulling it from corners. I have made use of javascript <i>resizable()</i> and <i>draggable</i> functions for that. I have included the jQuery and javascript files from Google CDN to make the experiment run.
+    </p>
+    <div class="pic">
+        
+        <img class="resizebleImage"  src="../../images/img2.jpg" />
+        <div class="text">
+            <p>Try Dragging And Resizing The Image!!!</p>
+
+        </div>
+    </div>
+    <div class="snip">
+        <h3>Code Snippet</h3>
+            <!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">&lt;script </span><span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text/javascript&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span>
+
+            <span style="color: #d0d0d0">$(</span><span style="color: #24909d">document</span><span style="color: #d0d0d0">).ready(</span><span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">{</span>
+            <span style="color: #d0d0d0">$(</span><span style="color: #ed9d13">&quot;.resizebleImage&quot;</span><span style="color: #d0d0d0">).resizable().parent().draggable();</span>
+            <span style="color: #d0d0d0">});</span>
+            <span style="color: #6ab825; font-weight: bold">&lt;/script&gt;</span>
+            </pre></div>
+
+        <p>
+            The resizableImage class will call the function upon drag and resize events which will in turn call the inbuilt javascript functions for that.
+        </p>
+        <h3>Reference</h3>
+        <a href="http://stackoverflow.com/questions/2702008/how-to-do-drag-n-drop-and-resize-on-an-image-using-jquery">Stack Overflow</a>
+        <h3>Source Code</h3>
+        <p>
+            <div class="button-link"><a href="../../fileview/Default.aspx?~/experiments/week2/randd.html" target="_blank">View Source</a></div>
+            <div class="button-link"><a href="../../fileview/Default.aspx?~/css/dandr.css" target="_blank">View CSS</a></div>
+        </p>
+    </div>
+</body>
+</html>

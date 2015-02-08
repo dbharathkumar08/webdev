@@ -1,0 +1,92 @@
+﻿body {
+    background-image:url("bulb.jpg");
+    margin: 0px;
+    padding: 0px;
+}
+.button-link {
+    padding: 10px 15px;
+    background: #4479BA;
+    color: #FFF;
+    width:100px;
+    float:left;
+    margin-right:10px;
+}
+p {
+    clear:both;
+}
+#menu-link,#small-menu {
+    display:none;
+}
+.respimg {
+    height:auto;
+    max-width:100%;
+    display:block;
+}
+.field-label {
+    float:left;
+}
+@media screen and (min-width: 700px) {
+    .container {
+        width: 600px;
+        margin:auto;
+    }
+    .row {
+        width: 600px;
+        clear:both;
+    }
+    .col-6 {
+        width:300px;
+        float:left;
+    }
+    #small-menu {
+        display:none;
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 700px) {
+    .container {
+        width: 400px;
+        margin:auto;
+    }
+    .row {
+        width: 400px;
+        clear:both;
+    }
+    .col-6 {
+        width:200px;
+        float:left;
+    }
+    #small-menu {
+        display:none;
+    }
+}
+@media screen and (max-width: 500px){
+    .field-label {
+        float:none;
+    }
+    .container {
+        width: 300px;
+        margin: auto;
+    }
+    .row {
+        padding-top:100px;
+    }
+    body header nav {
+        display: none;
+    }
+    #menu-link, #small-menu {
+        display:block;
+    }
+    main{
+        padding-top:100px;
+    }
+    body header{
+        padding-top: 0px;
+        margin-top: 0px;
+        position:fixed;
+        width:500px;
+        background-image:url("bulb.jpg");    
+    }    
+}
+
+
+

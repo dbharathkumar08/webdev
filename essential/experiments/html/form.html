@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>First Experiment</title>
+    <link rel="stylesheet" type="text/css" href="../../css/form.css" />
+</head>
+<body>
+    <h2>About the Experiment:</h2>
+    <hr />
+    <h3>
+        <p>
+            In this experiment I have tried out different elements of form like Datalist,Calander,Email validation and linking the label with its relevant field.
+
+        </p>
+    </h3>
+    <hr />
+    <h2>Enter your details below:</h2>
+    <form>
+        <div>
+            <label for="name">Name:</label>
+            <input id="name" name="name" type="text" placeholder="Enter your name"/>
+        </div>
+        <div>
+            <label for="add1">Address:</label>
+            <input id="add1" name="addressline1" type="text" placeholder="Enter Address line 1"/><br />
+            <input id="add2" name="addressline2" type="text" placeholder="Enter Apt no.Unit no"/><br />
+            <input id="add3" name="zip" type="text" placeholder="Enter 5 digit zip code" /><br />
+            <input id="add4" name="city" type="text" placeholder="City" />
+        </div>
+        <div>
+            <label for="state">State:</label>
+            <div>
+                <input list="state" height="4" />
+                <datalist id="state" >
+                    <option>Alabama</option>
+                    <option>Alaska</option>
+                    <option>Arizona</option>
+                    <option>Arkansas</option>
+                    <option>Arizona</option>
+                    <option>California</option>
+                    <option>Colorado</option>
+                    <option>Connecticut</option>
+                    <option>Delaware</option>
+                    <option>Florida</option>
+                    <option>Georgia</option>
+                    <option>Hawaii</option>
+                    <option>Idaho</option>
+                    <option>Illinois</option>
+                    <option>Indiana</option>
+                    <option>Iowa</option>
+                    <option>Kansas</option>
+                    <option>Kentucky</option>
+                    <option>Lousiana</option>
+                    <option>Maine</option>
+                    <option>Maryland</option>
+                    <option>Massachusetts</option>
+                    <option>Michigan</option>
+                    <option>Minnesota</option>
+                    <option>Mississippi</option>
+                    <option>Missouri</option>
+                    <option>Montana</option>
+                    <option>Nebraska</option>
+                    <option>Nevada</option>
+                    <option>New Hampshire</option>
+                    <option>New Jersey</option>
+                    <option>New Mexico</option>
+                    <option>New York</option>
+                    <option>North Carolina</option>
+                    <option>North Dakota</option>
+                    <option>Ohio</option>
+                    <option>Oklahoma</option>
+                    <option>Oregon</option>
+                    <option>Pennsylvaniya</option>
+                    <option>Rhode Island</option>
+                    <option>South Carolina</option>
+                    <option>South Dakota</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Utah</option>
+                    <option>Vermont</option>
+                    <option>Virginia</option>
+                    <option>Washington</option>
+                    <option>West Virginia</option>
+                    <option>Wisconsin</option>
+                    <option>Wyoming</option>
+
+                </datalist>
+            </div>
+        </div>
+        <div>
+            <label for="mail">Email:</label>
+            <input id="mail" name="email" placeholder="abc@xyz.pqr" type="email"/>
+        </div>
+        <div>
+            <label>DOB:</label>
+            <input type="date" />
+        </div>
+        <input type="submit" />
+    </form>
+    <a href="../../fileview/Default.aspx?~/experiments/html/form.html" target="_blank">
+        View Source
+    </a>
+    <a href="../../fileview/Default.aspx?~/css/form.css" target="_blank">
+        View CSS
+    </a>
+    <hr />
+    <h4>References:</h4>
+    <a href="https://www.youtube.com/watch?v=rvFdP8taVQo">Prof.Jose's Lecture</a>
+
+</body>
+</html>

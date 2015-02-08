@@ -1,0 +1,146 @@
+﻿body {
+	background-size: 50px 50px;
+    background-color: rgba(20,20,20,.6);
+    background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+    background-image: -moz-linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+    -pie-background: linear-gradient(90deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent) 0 0 / 50px 50px #f90;
+    behavior: url(/pie/PIE.htc);
+	font-family: 'Cherry Swash', trebuchet ms, cursive;
+	font-size:1.0em; 
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+p {
+	text-align:justify; 
+    margin-bottom:10px
+}
+.para {
+    background: #ffffff; 
+    overflow:auto;
+    width:800px;
+    border:solid gray;
+    border-width:.1em .1em .1em .8em;
+    padding:.2em .6em;
+}
+.pr {
+    margin: 0; line-height: 125%;
+}
+.snippet1, .snippet2,h1 {
+    margin-left:30px;
+}
+.button-link {
+    padding: 10px 15px;
+    background: #4479BA;
+    color: #FFF;
+    width:100px;
+    float:left;
+    margin-right:10px;
+}
+.button-link1 {
+    padding: 10px 15px;
+    background: #4479BA;
+    color: #FFF;
+    width:100px;
+    
+    margin-right:10px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+A:link {color: blue; text-decoration:none}
+.container{
+  width:45%;
+  margin:20px auto; 
+  background:#fff; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; 
+  background-color:rgba(255,255,255,.7); 
+  padding:1em; 
+  border-radius:15px; 
+  box-shadow:4px 4px 10px 0 rgba(20,20,20,.6); 
+  text-shadow: 1px 1px 5px #fff
+}
+div#lab {
+	position:fixed; 
+    background:url('http://demo.web3designs.com/images/flask.png') center bottom no-repeat; right:1.5em; bottom:0;
+}
+@-webkit-keyframes greenPulse {
+  0% {box-shadow:0 0 30px #4bbec8}
+  50% {box-shadow:0 0 80px #4bbec8}
+  100% {box-shadow:0 0 30px #4bbec8}
+}
+
+div#beaker span.glow {
+  width:100%;
+  height:100%;
+  background:#4bbec8;
+  position:relative;
+  display:block;
+  border-radius:200px;
+  animation:greenPulse 2s infinite;
+  -webkit-animation:greenPulse 2s infinite;
+  -moz-animation:greenPulse 2s infinite;
+  -o-animation:greenPulse 2s infinite;
+}
+@-webkit-keyframes bubbleUp {
+  0% {bottom:110px;-webkit-transform:scale(.9);opacity:0}
+  1% {bottom:110px;-webkit-transform:scale(.3);opacity:0}
+  30% {bottom:110px;-webkit-transform:scale(.8);opacity:1}
+  95% {bottom:545px;-webkit-transform:scale(.3);opacity:1}
+  99% {bottom:550px;-webkit-transform:scale(3);opacity:0}
+  100% {bottom:110px;-webkit-transform:scale(.9);opacity:0}
+}
+div#beaker span.bubble {
+  background:#fff;
+  width:80px;
+  height:80px;
+  position:absolute;
+  display:block;
+  left:150px;
+  bottom:110px;
+  border-radius:100px; 
+  background:-moz-radial-gradient(center 45deg, circle closest-corner, rgba(75,190,200,0), rgba(75,190,200,.1), rgba(75,190,200,.3), rgba(255,255,255,.7));
+  background:-webkit-gradient(radial, center center, 0, center center, 100, from(rgba(75,190,200,.2)), to(rgba(255,255,255,.7)));
+  background:-webkit-gradient(center 45deg, circle closest-corner, rgba(75,190,200,0), rgba(75,190,200,.1), rgba(75,190,200,.3), rgba(255,255,255,.7));
+  background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%, rgba(9,133,167,0.1) 51%, rgba(9,133,167,0.3) 71%, rgba(9,133,167,.7) 100%);
+  animation:bubbleUp 4s infinite ease-in-out;
+  -webkit-animation:bubbleUp 4s infinite ease-in-out;
+  -o-animation:bubbleUp 4s infinite ease-in-out;
+  -moz-animation:bubbleUp 4s infinite ease-in-out;
+}
+div#beaker span.bubble1 {
+  background:#fff;
+  width:70px;
+  height:70px;
+  position:absolute;
+  display:block;
+  left:180px;
+  bottom:110px;
+  border-radius:80px; 
+  background:-moz-radial-gradient(center 45deg, circle closest-corner, rgba(75,190,200,0), rgba(75,190,200,.1), rgba(75,190,200,.3), rgba(255,255,255,.7));
+  background:-webkit-gradient(radial, center center, 0, center center, 100, from(rgba(75,190,200,.2)), to(rgba(255,255,255,.7)));
+  background:-webkit-gradient(center 45deg, circle closest-corner, rgba(75,190,200,0), rgba(75,190,200,.1), rgba(75,190,200,.3), rgba(255,255,255,.7));
+  background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%, rgba(9,133,167,0.1) 51%, rgba(9,133,167,0.3) 71%, rgba(9,133,167,.7) 100%);
+  animation:bubbleUp 5s infinite ease-in-out;
+  -webkit-animation:bubbleUp 7s infinite ease-in-out;
+  -o-animation:bubbleUp 7s infinite ease-in-out;
+  -moz-animation:bubbleUp 7s infinite ease-in-out;
+}
+div#beaker span.bubble1 {
+  background:#fff;
+  width:50px;
+  height:50px;
+  position:absolute;
+  display:block;
+  left:180px;
+  bottom:110px;
+  border-radius:80px; 
+  background:-moz-radial-gradient(center 45deg, circle closest-corner, rgba(75,190,200,0), rgba(75,190,200,.1), rgba(75,190,200,.3), rgba(255,255,255,.7));
+  background:-webkit-gradient(radial, center center, 0, center center, 100, from(rgba(75,190,200,.2)), to(rgba(255,255,255,.7)));
+  background:-webkit-gradient(center 45deg, circle closest-corner, rgba(75,190,200,0), rgba(75,190,200,.1), rgba(75,190,200,.3), rgba(255,255,255,.7));
+  background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%, rgba(9,133,167,0.1) 51%, rgba(9,133,167,0.3) 71%, rgba(9,133,167,.7) 100%);
+  animation:bubbleUp 5s infinite ease-in-out;
+  -webkit-animation:bubbleUp 5s infinite ease-in-out;
+  -o-animation:bubbleUp 5s infinite ease-in-out;
+  -moz-animation:bubbleUp 5s infinite ease-in-out;
+}

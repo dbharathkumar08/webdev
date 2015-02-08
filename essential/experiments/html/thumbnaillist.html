@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ThumbNail List</title>
+    <link rel="stylesheet" type="text/css" href="../../css/list.css" />
+</head>
+<body>
+    <div>
+        <h3>About The Experiment:</h3>
+        In this experiment I have tried representing an unordered list as thumbnail list and also I have included slider/range to give ratings to different movies
+    </div>
+    <hr />
+    <div>
+        <div id="title">
+            <h3>Must Watch Inspirational Movies</h3>
+        </div>
+        <ul>
+            
+                <li>
+                    <img src="shawshank.jpg">
+                    <h3>Shawshank Redemption</h3>
+                    <p>Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency. (142 mins.)</p>
+                    <form oninput="x.value=parseInt(mv1.value)">
+                        <label for="mv1">Rate It!</label>
+                        <input id="mv1" type="range" value="0" min="0" max="10" />
+                        <output name="x" for="mv1"></output>
+                    </form>
+            </li>
+            
+            <li>
+                <img src="poh.jpg">
+                <h3>The Persuit of Happiness</h3>
+                <p>A struggling salesman takes custody of his son as he's poised to begin a life-changing professional endeavor. (117 mins.)</p>
+                <form oninput="x.value=parseInt(mv2.value)">
+                    <label for="mv2">Rate It!</label>
+                    <input id="mv2" type="range" value="0" min="0" max="10" />
+                    <output name="x" for="mv2"></output>
+                </form>
+            </li>
+
+            <li>
+                <img src="fightclub.jpg">
+                <h3>Fight Club</h3>
+                <p>An insomniac office worker looking for a way to change his life crosses paths with a devil-may-care soap maker and they form an underground fight club that evolves into something much, much more... (139 mins.)</p>
+                <form oninput="x.value=parseInt(mv3.value)">
+                    <label for="mv3">Rate It!</label>
+                    <input id="mv3" type="range" value="0" min="0" max="10" />
+                    <output name="x" for="mv2"></output>
+                </form>
+            </li>
+
+            <li>
+                <img src="lifeisb.jpg">
+                <h3>Life Is Beautiful</h3>
+                <p>A Jewish man has a wonderful romance with the help of his humour, but must use that same quality to protect his son in a Nazi concentration camp. (116 mins.)</p>
+                <form oninput="x.value=parseInt(mv4.value)">
+                    <label for="mv4">Rate It!</label>
+                    <input id="mv4" type="range" value="0" min="0" max="10" />
+                    <output name="x" for="mv3"></output>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h4>Code Snippets:</h4>
+        <div class="mydiv">
+            <textarea class="ta">
+                For Showing the output rating:
+                <form oninput="x.value=parseInt(mv4.value)">
+                
+                For Range:
+                <input id="mv2" type="range" value="0" min="0" max="10" />
+            </textarea>
+        </div>
+        </div>
+        <a href="../../fileview/Default.aspx?~/experiments/html/thumbnaillist.html" target="_blank">
+            View Source
+        </a>
+        <a href="../../fileview/Default.aspx?~/css/list.css" target="_blank">
+            View CSS
+        </a>
+        <hr />
+        <div>
+            <h4>References</h4>
+            <a href="http://designshack.net/articles/css/5-simple-and-practical-css-list-styles-you-can-copy-and-paste/">Designshack.net</a>
+        </div>
+</body>
+</html>

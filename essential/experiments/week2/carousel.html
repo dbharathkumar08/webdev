@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Carousel Using Bootstrap</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body { background-image:url("../../images/gbg.jpg"); }
+    </style>
+</head>
+<body>
+   <div class="container">
+      <h1>Carousel</h1>
+        <h3>About The Experiment</h3>
+       <p>
+           In this experiment I have tried creating an image scroller also known as <i>Carousel</i> using Bootstrap. This experiment sutomatically scrolls images at interval of 5 secs. user can also go to next image manually using the side buttons.
+       </p>
+    </div>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+ 
+        <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+        <img src="../../images/c1.jpg" />
+        <div class="carousel-caption">
+          <h3>Image1</h3>
+        </div>
+        </div>
+    <div class="item">
+      <img src="../../images/c2.jpg" />
+      <div class="carousel-caption">
+          <h3>Image2</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="../../images/c3.jpg" />
+      <div class="carousel-caption">
+          <h3>Image3</h3>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- Carousel -->
+    <h3>
+        Code Snippet
+    </h3>
+    <pre>
+        &lt;!-- Indicators --&gt;
+        &lt;ol class="carousel-indicators"&gt;
+        &lt;li data-target="#carousel-example-generic" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+        &lt;li data-target="#carousel-example-generic" data-slide-to="1"&gt;&lt;/li&gt;
+        &lt;li data-target="#carousel-example-generic" data-slide-to="2"&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+    </pre>
+    <p>
+        This is the code snippet for small indicators at the bottom of each image. The indicators are declared using an ordered list. I have used the bootstrap class <i>carousel-indocator</i> for it. 
+    </p>
+    <pre>
+        &lt;!-- Wrapper for slides --&gt;
+        &lt;div class="carousel-inner"&gt;
+        &lt;div class="item"&gt;
+        ...
+        &lt;/div&gt;
+        &lt;/div&gt;
+    </pre>
+    <p>
+        The wrapper contains the slider images and the captions.
+    </p>
+    <pre>
+        &lt;!-- Controls --&gt;
+        &lt;a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"&gt;
+        &lt;span class="glyphicon glyphicon-chevron-left"&gt;&lt;/span&gt;
+        &lt;/a&gt;
+    </pre>
+     <p>
+        The controls are the left and right arrows at the ends of the slider images. This allows users to manually toggle back and forth between the sliders.
+    </p>
+    <h3>
+        
+         References
+            </h3>
+                <a href="http://bootstrapbay.com/blog/bootstrap-3-carousel-tutorial/" class="btn btn-success" role="button" target="_blank">bootstrapbay.com</a>
+            <h3>
+         Source Code
+            </h3>
+            <a href="../../fileview/Default.aspx?~/experiments/week2/carousel.html" class="btn btn-success" role="button" target="_blank">View HTML Source</a>
+        
+</body>
+   
+    <script>
+        $('.carousel').carousel({
+            interval: 3000
+        })
+    </script>
+</html>
