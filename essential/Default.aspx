@@ -36,7 +36,7 @@
     <li><a href="filelist.aspx" target="_blank">FileList</a></li>
     <li><a href="autofile.aspx" target="_blank">AutoFile</a></li>
     <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
-    <li><a href="blog/" target="_blank">Blog</a></li>
+    <li><a href="blog/Default.aspx" target="_blank">Blog</a></li>
     <li><a href="experiments/index.html" target="_blank">Experiments</a></li>
 </ul>
 
@@ -53,8 +53,7 @@
 <hr />
 
 <p>
-    It would be helpful if your home page shows your name and a
-    photo of yourself.  This will help us to get to know you. 
+    <button><a href="https://github.com/isha112/webdev" target="_blank">Link to Git</a></button>
 </p>
     
 <hr />
