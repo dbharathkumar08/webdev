@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Site Title</title>
+    <title>Popup Demo</title>
     
     <!-- Include jQuery -->
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
@@ -36,8 +36,9 @@
         });
      });
     </pre>
+    <h3>Description</h3>
     <p>
-        Here I have used the plugin for popup. It contains of popup function which is called when the button is clicked.
+        Here I have used the plugin for popup. It contains of popup function which is called when the button is clicked. This popup function will check the inout param provided to it. If there is some object is provided, then it will change its default values and set it according to diven parameters: e.g. $('#popup').popup({'color':'blue'}). If some string is provided then it will call the particular method of popup. e.g.:$('#popup').popup('hide'). If no parameters are passed then it will show default values set by popup() function.
     </p>
     <!-- Add content to the popup -->
     <div id="my_popup">

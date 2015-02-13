@@ -34,6 +34,7 @@ a{
 body {
     background-image:url("../../images/gbg.jpg");
     font-family:'Lucida Sans';
+    font-weight:500;
     margin-left:50px;
     margin-right:50px;
     

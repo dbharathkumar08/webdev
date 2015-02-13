@@ -23,7 +23,7 @@
         <h1>Floating Menu</h1>
         <h2>About The Experiment</h2>
         <p>
-            In this experiment I have tried creating cool floating menu that flows up and down as we scroll through the page. Also when user hover over the menu, other sub-options fade in and fade out.
+            In this experiment I have tried creating cool floating menu that flows up and down as we scroll through the page. Also when user hover over the menu, other sub-options fade in and fade out. I have used jQuery and javascript for the implementation.
         </p>
     </div>
     <div class="content">
@@ -36,6 +36,8 @@
     </div>
     <div>
         <h2>Code Snippet</h2>
+        <div class="row">
+            
         <pre>
 function FloatMenu(){<br />
     var scrollAmount=$(document).scrollTop();<br />
@@ -48,9 +50,13 @@ function FloatMenu(){<br />
     }<br />
 }
         </pre>
+             <h3>Description</h3> 
+            <div class="col-6">
         <p>
-            Here the function calculates the top scrolling amount and with reference to that, relative scroll amount is calculated. If that amount is greater than preset bar, menu is animated to new position.
+            Here I have used javascript for the floating effect. On the scroll event <i>Floatmenu()</i> function is called. This function calculates the top scrolling amount and current scroll and with reference to that, relative scroll amount is calculated. If that amount is greater than preset bar, menu is animated to new position.
         </p>
+                </div>
+        </div>
     </div>
     <h2>References</h2>
     <h3><a href="http://www.warpconduit.net/2009/10/07/create-a-floating-menu-with-jquery/" target="_blank">Floating Menu Tutorial</a></h3>

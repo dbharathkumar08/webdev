@@ -49,7 +49,7 @@ $("#srch").bind("click", function() {<br />
 });
         </pre>
         <p>
-            Here jQuery first stores the value inserted in textbox in a variable. Thenk it removes all highlighted words from paragraphs through <i>removeHighlight()</i> function. After that it highlights the instances of inserted text through <i>highlight()</i> function.
+            Here jQuery first finds the value inserted in textbox and stores it in a variable. Then it removes past highlighted words from paragraphs through <i>removeHighlight()</i> function. After that it highlights the instances of inserted text through <i>highlight()</i> function. The removehighlight() function finds each highlighted word by using <i>span.highlight</i> class and then it iterates over each of the element and replaces it with unhighlighted element from the parent node array. For <i>highlight()</i> function it adds the child node to array for future reference and highlights current occurance.  
         </p>
     </div>
     <h2>References</h2>
