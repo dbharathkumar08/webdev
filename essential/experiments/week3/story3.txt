@@ -2,3 +2,4 @@
 text-highlight.html		Text Highlighter
 float.html			Floating Menu
 popup.html				Popup Box
+validation.html			Form Validation
