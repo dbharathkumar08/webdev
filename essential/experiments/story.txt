@@ -2,3 +2,4 @@
 ../story/index.htm?../experiments/html/story1.txt	Week1: HTML experiments
 ../story/index.htm?../experiments/week2/story2.txt	Week2: CSS-javascript experiments
 ../story/index.htm?../experiments/week3/story3.txt	Week3: jQuery-AJAX experiments
+../story/index.htm?../experiments/week4/story4.txt	Week4: API-Angular.js experiments

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Weather API</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/weatherAPI.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/weather.css" />
+</head>
+<body>
+    <div class="content">
+        
+        <h1>Weather Condition in your city</h1>
+        <h3>About The Experiment</h3>
+        <p>In this experiment I have tried my hands on API services. Here I have used worldweatheronline API for displaying the weather of input place. The user enters the City or Country or Places name in the input box and as he clicks on the Go! button, the current weather conditions of that place are displayed. These details include: Temprateure in Celcius and Ferenhit, Feels like temprature, weather condition description, humidity, weather icon etc. I have also enabled keyboard controls like Enter,Tab for the ease of use.</p>
+        <div class="detail">
+            <h3>Enter City:</h3>
+            <input type="text" id="name" contenteditable="true" />
+            <button id="getValue" >Go!</button>
+            <div id="weather"></div>
+        </div>
+        <h3>Code Snippet</h3>
+
+            <!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"> <span style="color: #d0d0d0">$(</span><span style="color: #ed9d13">&quot;#getValue&quot;</span><span style="color: #d0d0d0">).click(</span><span style="color: #6ab825; font-weight: bold">function</span><span style="color: #d0d0d0">(){</span>
+   <span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">city=$(</span><span style="color: #ed9d13">&quot;#name&quot;</span><span style="color: #d0d0d0">).val();</span>
+    <span style="color: #d0d0d0">$.ajax({</span>
+            <span style="color: #d0d0d0">url:</span> <span style="color: #ed9d13">&quot;http://api.worldweatheronline.com/free/v2/weather.ashx?q=&quot;</span><span style="color: #d0d0d0">+city+</span><span style="color: #ed9d13">&quot;&amp;format=JSON&amp;num_of_days=1&amp;key=a53efcc3de3ded6ab63590252e80e&quot;</span><span style="color: #d0d0d0">,</span>
+            <span style="color: #d0d0d0">success:</span> <span style="color: #6ab825; font-weight: bold">function</span><span style="color: #d0d0d0">(weather){</span>
+       <span style="color: #6ab825; font-weight: bold">for</span> <span style="color: #d0d0d0">(</span><span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">w</span> <span style="color: #6ab825; font-weight: bold">in</span> <span style="color: #d0d0d0">weather)</span> <span style="color: #d0d0d0">{</span>
+                    <span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">wt</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">weather[w];</span>
+                    <span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">cc</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">wt.current_condition[</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">];</span>
+
+                    <span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">$list</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">$(</span><span style="color: #ed9d13">&#39;&lt;ul&gt;&#39;</span><span style="color: #d0d0d0">);</span>
+                    <span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">$humidity</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">$(</span><span style="color: #ed9d13">&#39;&lt;li&gt;&#39;</span><span style="color: #d0d0d0">).text(</span><span style="color: #ed9d13">&quot;Humidity: &quot;</span> <span style="color: #d0d0d0">+</span> <span style="color: #d0d0d0">cc.humidity);</span>
+          <span style="color: #d0d0d0">...</span>
+          <span style="color: #d0d0d0">...</span>
+          <span style="color: #d0d0d0">...</span>
+          <span style="color: #d0d0d0">$(</span><span style="color: #ed9d13">&quot;#weather&quot;</span><span style="color: #d0d0d0">)</span>
+                    <span style="color: #d0d0d0">.append($place)</span>
+           <span style="color: #d0d0d0">}</span> 
+         <span style="color: #d0d0d0">}</span>
+       <span style="color: #d0d0d0">});</span>
+    <span style="color: #d0d0d0">});</span>
+<span style="color: #d0d0d0">});</span>
+</pre></div>
+    <h3>Decsription</h3>
+        <p>
+            Here when the button is clicked, the value from input field is stored in a variable named <i>city</i>. This value is used as a parameter to the url we are passing to access the API data. Only on click of button, jQuery ajax function is called. This function sets url as API url with city parameter. For successful response, it performs iteration over each element in response and their values are stored in variables and dynamically added to the web page.
+        </p>
+        <h3>References</h3>
+        <p>
+            I have used the following tutorial to create this animation:
+            <a href="https://developer.worldweatheronline.com/page/explorer-free">Tutorial</a>
+        </p>
+        <h3>Source Code</h3>
+        <p>
+            <button><a href="../../fileview/Default.aspx?~/experiments/week4/API1.html" target="_blank">View Source</a></button>
+            <button><a href="../../fileview/Default.aspx?~/css/weather.css" target="_blank">View CSS</a></button>
+            <button><a href="../../fileview/Default.aspx?~/experiments/week4/js/weatherAPI.js" target="_blank">View JS</a></button>
+        </p>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿<html>
+    <head>
+        <title>Filtering using Angular JS</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="js/angular.min.js"></script>
+        <script src="js/search.js"></script>
+        
+    </head>
+<body ng-app="MyApp">
+    <div class="container">
+    <h1>Filtering using Angular JS</h1>
+    <h2>About The Experiment</h2>
+    <p>
+        In this experiment I have tried to implement filtering functionality with help of angular js. Here there is a dataset given. On that dataset, filtering is applied. When the user types the book's title or its price in the input field, the dataset elements are filtered and the result is shown by updating the DOM. So it is a single page application where the user gets all result on single page without reloading it.
+    </p>
+  <div ng-controller="MyCtrl">
+    <form class="form-inline">
+      <input ng-model="query" type="text"
+        placeholder="Filter by book title or price" autofocus>
+    </form>
+
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                 <th>Title</th>
+                <th>Price</th> 
+              </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="book in books | filter:query | orderBy: 'title'">
+              <td>{{book.title}}</td>
+              <td>{{book.price}}</td>
+          </tr>
+              </tbody>
+      </table>
+    
+  </div>
+    <h2>Code Snippet</h2>
+    <pre>
+         $scope.filterFunction = function (element) {<br />
+        return element.title.match(/^Ma/) ? true : false;<br />
+        };
+    </pre>
+        <pre>
+        &lt;tr ng-repeat="book in books | filter:query | orderBy: 'title'"&gt;<br />
+              &lt;td&gt;scope variable&lt;/td&gt;<br />
+              &lt;td&gt;scope variable&lt;/td&gt;<br />
+        &lt;/tr&gt;
+            </pre>
+    <h4>Description</h4>
+        <p>
+            Here in the first snippet, filetr function is called with the an element. If that element's title matches with input then that element is displayed .And in the second snippet, a ng-repeat is called and that performs iteration over each element in the data set and filters them according to the query:value in the input field. It sorts the elements by title. The scope variables are bound to both UI and Contorl. So values from the dataset are fed in the scope variables.
+        </p>
+        <h3>References</h3>
+        <a href="http://fdietz.github.io/recipes-with-angular-js/common-user-interface-patterns/filtering-and-sorting-a-list.html" class="btn btn-primary" target="_blank">Recipes With Angular.js</a>
+        <h3>Source Code</h3>
+        <a href="../../fileview/Default.aspx?~/experiments/angular/search.html" class="btn btn-primary" target="_blank">View HTML Source</a>
+        <a href="../../fileview/Default.aspx?~/experiments/angular/js/search.js" class="btn btn-primary" target="_blank">View javascript</a>
+
+        </div>
+</body>
+    </html>

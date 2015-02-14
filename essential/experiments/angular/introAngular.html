@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Intro to Angular js</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/introaj.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/ajs1.css" />
+</head>
+<body ng-app = "HelloApplication" >
+    <h1> Introduction to Angular js</h1>
+    <h2>About The Experiment</h2>
+    <p>
+        This is a basic experiment which gives an intro to angular js functionality. It shows how data is updated dynamically without rendering the whole page again. It shows how the DOM changes due to Angular. Here the user has to type his/her name in the input box and that name will appear in the begining of the paragraph.
+    </p>
+    <div ng-controller = "control">
+        <h1>Please input your name in the field</h1>
+        <input ng-model = "hello" placeholder="Enter your name"/>
+        
+        <p>
+            <span class="name">
+            {{hello}}
+                </span>, Hello from Angular!! Good luck!</p>
+    </div>
+    <h2>Code Snippet</h2>
+    <div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">app</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">angular.module(</span><span style="color: #ed9d13">&quot;HelloApplication&quot;</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">[]);</span>
+<span style="color: #d0d0d0">app.controller(</span><span style="color: #ed9d13">&quot;control&quot;</span><span style="color: #d0d0d0">,</span> <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">($scope)</span> <span style="color: #d0d0d0">{</span>
+    <span style="color: #d0d0d0">$scope.hello;</span>
+<span style="color: #d0d0d0">})</span>
+</pre></div>
+
+    <h3>Description</h3>
+    <p>
+        Here this code snippet shows the javascript, which shows the controls for module and controller. Here for the controller module, a function with $scope variable is called. This function binds the value of scope to the value of input.    
+    </p>
+<!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">&lt;div</span> <span style="color: #bbbbbb">ng-controller =</span><span style="color: #ed9d13">&quot;control&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span>
+        <span style="color: #6ab825; font-weight: bold">&lt;h1&gt;</span>Please input your name in the field<span style="color: #6ab825; font-weight: bold">&lt;/h1&gt;</span>
+        <span style="color: #6ab825; font-weight: bold">&lt;input</span> <span style="color: #bbbbbb">ng-model =</span><span style="color: #ed9d13">&quot;hello&quot;</span> <span style="color: #bbbbbb">placeholder=</span><span style="color: #ed9d13">&quot;Enter your name&quot;</span><span style="color: #6ab825; font-weight: bold">/&gt;</span>
+        
+        <span style="color: #6ab825; font-weight: bold">&lt;p&gt;</span>
+            <span style="color: #6ab825; font-weight: bold">&lt;span</span> <span style="color: #bbbbbb">class=</span><span style="color: #ed9d13">&quot;name&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span>
+            {{hello}}
+                <span style="color: #6ab825; font-weight: bold">&lt;/span&gt;</span>, Hello from Angular!! Good luck!<span style="color: #6ab825; font-weight: bold">&lt;/p&gt;</span>
+    <span style="color: #6ab825; font-weight: bold">&lt;/div&gt;</span>
+</pre></div>
+
+    <h3>Description</h3>
+    <p>
+        Here "HelloApplication" is define as ng-app which tells the angular.js to treat as angular application. Inside ng-app angular will search for a controller which is indicated by ng-controller. Inside that there is ng-model. The value that model has, is reflected in the $scope variable. So here "hello" is scope variable whose value will be changed according to value iin input box.
+    </p>
+<h3>References</h3>
+    <a href="http://www.w3schools.com/angular/">W3 Schools</a>
+<h3>Source Code</h3>
+    <button>HTML</button>
+    <button>CSS</button>
+    <button>JavaScript</button>
+
+</body>
+</html>
