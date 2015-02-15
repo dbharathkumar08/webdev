@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html ng-app="helloApp">
+<head>
+    <title>Adding Elements through Angular</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="assets/js/ui-bootstrap-tpls-0.9.0.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/add.js"></script>
+</head>
+<body ng-controller="CompanyCtrl">
+    <div class="container">
+		<div class="page-header" style="margin: 0">
+			<h1>
+				Add-Remove Example Example
+			</h1>
+            <h2>About The Experiment</h2>
+            <p>
+                In this experiment I have tried adding and removing elements from DOM dynamically. 
+                
+            </p>
+            <p>
+                User can perform search by filtering. Also he can remove the elements from DOM without rendering the page again. User can also add elements to the DOM dynamically through help of Angular JS.
+            </p>
+		</div>
+		
+		<div style="padding: 10px 0px 20px 0px">
+			<b>Instruction: </b>
+			<!-- Instruction goes here -->
+			Type search keyword in Search field and check the tables changing based on the search result. Try playing with all the functions such as add, remove and search.
+		</div>
+		<div style="padding:20px 0px 60px 0px">
+			<span class="col-md-1" style="font-weight:bold">Search</span>
+			<span class="col-md-3">
+			<input type="text" class="form-control" ng-model="searchKeyword"/>
+			</span>
+		</div>
+		<div style="padding-bottom:50px">
+			<table style="width:100%">
+				<tr>										
+					<td style="vertical-align: top">
+						<table class="table">
+							<tr>
+								<th>Name
+								</th>
+								<th>Employees
+								</th>
+								<th>Head Office
+								</th>
+								<th>Action
+								</th>
+							</tr>
+							<tr ng-repeat="company in companies | filter: searchKeyword">
+								<td>{{company.name}}
+								</td>
+								<td>{{company.employees}}
+								</td>
+								<td>{{company.headoffice}}
+								</td>
+								<td>
+								<input type="button" value="Remove" class="btn btn-danger" ng-click="removeRow(company.name)"/>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td style="width:50%;vertical-align: top;padding-left:100px;">
+						<div style="padding-bottom:20px;">
+							<h3 style="margin-top:0px">Add a Company</h3>
+						</div>
+						<form class="form-horizontal" role="form" ng-submit="addRow()">
+							<div class="form-group">
+								<label class="col-md-2 control-label">Name</label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" name="name"
+										ng-model="name" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-2 control-label">Employees</label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" name="employees"
+										ng-model="employees" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-2 control-label">Headoffice</label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" name="headoffice"
+										ng-model="headoffice" />
+								</div>
+							</div>
+							<div class="form-group">								
+								<div style="padding-left:110px">
+									<input type="submit" value="Submit" class="btn btn-success"/>
+								</div>
+							</div>
+						</form>
+					</td>
+				</tr>
+			</table>
+		</div>	
+    </div>
+    <div class="container">
+        <h2>
+            Code Snippet
+        </h2>
+        <pre>
+    $scope.addRow = function(){		
+        $scope.companies.push({ 'name':$scope.name, 'employees': $scope.employees, 'headoffice':$scope.headoffice });		
+        $scope.name='';
+        $scope.employees='';
+        $scope.headoffice='';
+    };
+    $scope.removeRow = function (name) {
+        var index = -1;
+        var comArr = eval($scope.companies);
+        for (var i = 0; i < comArr.length; i++) {
+            if (comArr[i].name === name) {
+                index = i;
+                break;
+            }
+        }
+        if (index === -1) {
+            alert("Something gone wrong");
+        }
+        $scope.companies.splice(index, 1);
+    };
+        </pre>
+        <h3>Description</h3>
+        <p>
+            Here addRow() and removeRow() functions explain how the element is dynamically added and removed from DOM.
+            <p><b>addRow():</b> the values of input are double binded with both UI and DOM. So when an element is added, the values are pushed in scope varaible named <i>companies</i>. Companies has three elements namely: name, employees and headoffice. So values from inout boxes are added to them respectively.</p>
+            <p><b>removeRow():</b> This function will take company name as parameter. Then for the length of the array:comapnies, the loop is run and for the company whose name matches with parameter name, the index is stored. Using that index, that element is spliced off from the comapanies array.</p>
+        </p>
+        <h3>Reference:Prof Jose's Lecture</h3>
+        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Kan1sMNOlIc" frameborder="0" allowfullscreen></iframe>
+        <h3>Source Code</h3>
+        <a href="../../fileview/Default.aspx?~/experiments/angular/add.html" class="btn btn-primary" target="_blank">View HTML Source</a>
+        <a href="../../fileview/Default.aspx?~/experiments/angular/js/add.js" class="btn btn-primary" target="_blank">View javascript</a>
+        <p>
+
+        </p>
+    </div>
+    
+</body>
+</html>
