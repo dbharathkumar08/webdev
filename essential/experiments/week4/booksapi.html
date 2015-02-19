@@ -3,11 +3,138 @@
 <head>
     <title>Books API</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../angular/js/angular.min.js"></script>
     <script src="js/bookAPI.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <style>
+        .poster {
+            float:left;
+            margin:5px;
+        }
+        body {
+            background-image:url("../../images/gbg.jpg");
+        }
+    </style>
 </head>
-<body>
-    <input type="text" id="bookname" contenteditable="true" />
-    <button id="getValue" >Search!</button>
-    <div id="details"></div>
+<body ng-app="booksApp">
+    <div ng-controller="infocontroller" class="container">
+        <h1>Book Info Library</h1>
+        <h2>About The Experiment</h2>
+        <p>In this experiment I have tried loading the data of books information from the API through Angular js. As user enters the book name, it is passed as parameter to the API in the http get request. The data is then retreived and displayed on the page. User can also remove the books from the list and the DOM changes accordingly without refreshing the page. Also user can add to and remove from the favorite books array.</p>
+        
+        
+        
+
+        <table class="table table-striped">
+            <caption><h2>Favorite Books</h2></caption>
+            <tbody>
+                <tr ng-repeat="book in favBooks">
+                    <td>{{book.volumeInfo.title}}</td>
+                    <td>{{book.volumeInfo.authors[0]}}</td>
+                    <td>{{book.volumeInfo.categories[0]}}</td>
+                    <td>
+                        <img class="poster" ng-src="{{book.volumeInfo.imageLinks.thumbnail}}" width="50" />
+                        {{book.volumeInfo.description}}
+                    </td>
+                    <td>
+                        {{book.volumeInfo.description}}
+                    </td>
+                    <td>
+                        <button ng-click="removeFav(book)" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Search Books</h2>
+        <div class="input-group">
+            <input type="text" ng-model="searchByTitle" class="form-control" id="bookname" contenteditable="true" />
+            <span class="input-group-btn">
+                <button ng-click="searchBooks()" class="btn btn-primary" type="button" >Search!</button>
+            </span>
+        </div>
+         <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Summary</th>
+                    
+                    <th>Ratings</th>
+                    <th>&nbsp;</th>
+
+                </tr>
+                <!--
+                    <tr>
+                    <th><input ng-model="book.volumeInfo.title" class="form-control"/></th>
+                    <th><input ng-model="book.volumeInfo.authors" class="form-control" /></th>
+                    <th><input ng-model="book.volumeInfo.categories" class="form-control" /></th>
+                    <th><input ng-model="book.volumeInfo.description" class="form-control" /></th>
+                    <th><input ng-model="book.volumeInfo.averageRating" class="form-control" /></th>
+                    
+                </tr>
+                !-->
+            </thead>
+            <tbody>
+                <tr ng-repeat="book in books">
+                    <td>{{book.volumeInfo.title}}</td>
+                    <td>{{book.volumeInfo.authors[0]}}</td>
+                    <td>{{book.volumeInfo.categories[0]}}</td>
+                    
+                    
+                    <td>
+                        
+                    <p id="para">
+                        <img class="poster" ng-src="{{book.volumeInfo.imageLinks.thumbnail}}" width="50"/>
+                        {{book.volumeInfo.description}}</p>
+                    </td>
+                    <td>{{book.volumeInfo.averageRating}}</td>
+                    <td><button class="btn-danger" ng-click="removeBooks(book)"><span class="glyphicon glyphicon-remove"></span></button></td>
+                    <td><button class="btn btn-info" ng-click="addToFav(book)"><span class="glyphicon glyphicon-star"></span></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <h2>Code Snippet</h2>
+        <pre>
+        $scope.favBooks = [];
+        $scope.searchBooks = function(){    
+            var name = $scope.searchByTitle;
+            $http.get("https://www.googleapis.com/books/v1/volumes?q=" + name + "&amp;key=xxxxxxxxxxxxxx")
+            .success(function (books) {
+                    $scope.books = books.items;
+                    var book = books.items;
+                })
+        }
+        $scope.removeBooks = function (book) {
+            var index = $scope.books.indexOf(book);
+            $scope.books.splice(index, 1);
+        }
+        $scope.addToFav = function (book) {
+            $scope.favBooks.push(book);
+        }
+        </pre>
+        <h3>Description</h3>
+        <p>
+            Here in this code snippet 3 functions namely, searchBooks, removeBooks and addToFav are shown. 
+            <ul>
+                <li>searchBooks is used for searching the books from web API. It takes the user input as parameter and then makes a 'get' request to API for that title. On success it stores book items in scope variable books, which is later iterated on for displaying the books listed in it.</li>
+                <li>removeBooks is used for removing the books from the list. This function, upon being called takes the particular book object as parameter. After fimding the index of that book object in books array, it is spliced off using the index.</li>
+                <li>addToFav is used for adding the books to favorite list. Upon being called, it takes book object as parameter and pushes that to favBooks array.</li>
+            </ul>
+        </p>
+        <h3>Reference:Prof Jose's Lecture</h3>
+        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Kan1sMNOlIc" frameborder="0" allowfullscreen></iframe>
+        <h3>Source Code</h3>
+        <a href="../../fileview/Default.aspx?~/experiments/week4/booksapi.html" class="btn btn-primary" target="_blank">View HTML Source</a>
+        <a href="../../fileview/Default.aspx?~/experiments/week4/js/bookAPI.js" class="btn btn-primary" target="_blank">View javascript</a>
+        <p>
+
+        </p>
+    </div>
 </body>
 </html>

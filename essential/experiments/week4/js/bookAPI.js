@@ -1,16 +1,43 @@
-﻿$(function () {
+﻿var app = angular.module("booksApp", []);
 
-    $('input:text').focus(function () {
-        $(this).val('');
-    });
+    app.controller("infocontroller", function ($scope, $http) {
 
-    $("#getValue").click(function () {
-        var name = $("#bookname").val();
-        $.ajax({
-            url: "https://www.goodreads.com/search.xml?key=2vmAtTuaARiMpZLPpolFOA&q=" + name,
-            success: function (books) {
-                console.log(books);
+        $scope.favBooks = [];
+
+        $scope.searchBooks = function(){    
+            var name = $scope.searchByTitle;
+            $http.get("https://www.googleapis.com/books/v1/volumes?q=" + name + "&key=AIzaSyDoDjvyo5Yn_kvSJ8Z2F6dQpHe5xBvO2CQ")
+            .success(function (books) {
+                $scope.books = books.items;
+                var book = books.items;
+                
+                })
+        }
+
+        $scope.removeBooks = function (book) {
+            var index = $scope.books.indexOf(book);
+            $scope.books.splice(index, 1);
+        }
+
+        $scope.addToFav = function (book) {
+            $scope.favBooks.push(book);
+        }
+
+        $scope.removeFav = function (book) {
+            var index = $scope.favBooks.indexOf(book);
+            $scope.favBooks.splice(index, 1);
+        }
+
+       /* $scope.addBook = function () {
+            var info = {
+                title: $scope.book.volumeInfo.title,
+                authors: $scope.book.volumeInfo.authors,
+                categories: $scope.book.volumeInfo.categories,
+                description: $scope.book.volumeInfo.description,
+                averageRating: $scope.book.volumeInfo.averageRating
             }
+            
+            $scope.books.push(newBook);
+        }*/
         });
-    });
-});
+    
