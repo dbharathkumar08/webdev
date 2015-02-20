@@ -1,0 +1,73 @@
+﻿<html>
+<head>
+    <title>AngularJS HTML DOM</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="js/dom.js"></script>
+    <style>
+        body {
+            background-image:url("../../images/gbg.jpg");
+            
+        }
+    </style>
+</head>
+<body ng-app="MyApp">
+    
+
+    <div ng-controller="button" class="container">
+        <h2>HTML DOM change using Angular js</h2>
+        <h3>
+            About The Experiment
+        </h3>
+        <p>
+            In this experiment I have tried playing with various DOM elements provided by angular. I have used <i>hide,show,disable,click</i> etc for that. When user checks the disabled option, the button gets disabled. When user checks show/hide the button is shown/hidden respectively. When user clicks on last button, everytime the counter is increased and total number of clicks are displayed.
+        </p>
+        <h2>Try It Yourself!!</h2>
+    <table class="table table-striped">
+    <tr>
+        <td><input type="checkbox" ng-model="enableDisableButton" >Disable Button</td>
+        <td><button ng-disabled="enableDisableButton" ng-click="click()">Click Me!</button></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" ng-model="showHide1" >Show Button</td>
+        <td><button ng-show="showHide1" ng-click="click()">Click Me!</button></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" ng-model="showHide2" >Hide Button</td>
+        <td><button ng-hide="showHide2" ng-click="click()">Click Me!</button></td>
+    </tr>
+    <tr>
+        <td><p>Total click: {{ clickCounter }}</p></td>
+        <td><button ng-click="clickCounter = clickCounter + 1">Click Me!</button></td>
+    </tr>
+    </table>
+        <h3>Code Snippet</h3>
+        <pre>
+&lt;td&gt;&lt;input type="checkbox" ng-model="enableDisableButton" &gt;Disable Button&lt;/td&gt;
+&lt;td&gt;&lt;button ng-disabled="enableDisableButton" ng-click="click()"&gt;Click Me!&lt;/button&gt;&lt;/td&gt;
+
+&lt;td&gt;&lt;input type="checkbox" ng-model="showHide1" &gt;Show Button&lt;/td&gt;
+&lt;td&gt;&lt;button ng-show="showHide1" ng-click="click()"&gt;Click Me!&lt;/button&gt;&lt;/td&gt;
+
+&lt;td&gt;&lt;p&gt;Total click: {{ clickCounter }}&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;button ng-click="clickCounter = clickCounter + 1"&gt;Click Me!&lt;/button&gt;&lt;/td&gt;
+        </pre>
+        <p>
+        <ul>
+            <li>Here the first snippet shows the code for disabling the button. I have used <i>ng-disabled</i> for that.</li>
+            <li>In the second snippet I have shown the code for showing the button. I have used <i>ng-show</i> for that. Same can be done to hide the button with <i>ng-hide</i></li>
+            <li>In the third snippet I have shown the code for showing the number of clicks. I have used <i>ng-click</i> for that. Each time the button is clicked the counter is incremented. This counter is a scope variable which is shown at UI to display total number of clicks</li>
+        </ul>
+        </p>
+        <h3>References</h3>
+        <a href="http://www.tutorialspoint.com/angularjs/angularjs_html_dom.htm" class="btn btn-success" target="_blank">Tutorial Points</a>
+        <h3>Source Code</h3>
+        <a href="../../fileview/Default.aspx?~/experiments/week5/html_dom.html" class="btn btn-success" target="_blank">View HTML Source</a>
+        <a href="../../fileview/Default.aspx?~/experiments/week5/js/dom.js" class="btn btn-success" target="_blank">View javascript</a>
+        <p>
+
+        </p>
+    </div>
+    
+</body>
+</html>

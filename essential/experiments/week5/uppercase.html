@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Upper Case</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../angular/js/angular.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="js/uppercase.js"></script>
+    
+        <style>
+        body {
+            background-image:url("../../images/gbg.jpg");
+        }
+        </style>
+</head>
+<body ng-app="upperAPI">
+    <div ng-controller="convert" class="container">
+        <h1>Uppercase Filter</h1>
+        <h3>About the experiment</h3>
+        <p>
+            In this experiment, I have used Angualr js's filter to covert the text to upper case. Here whatever user inputs in the given tetxarea is converted to uppercase through uppercase filter.
+        </p>
+        <textarea ng-model="text" rows="7" cols="50"></textarea>
+        <p>
+            {{text | uppercase}}
+        </p>
+    </div>
+    <div class="container">
+        <h3>Code Snippet</h3>
+        <pre>
+&lt;textarea ng-model="text" rows="7" cols="50"&gt;&lt;/textarea&gt;
+&lt;p&gt;
+       {text | uppercase}
+&lt;/p&gt;
+
+        </pre>
+        <p>In this code I have shown the usage of the filter. This is the filter for uppercase. Here the input is bound to scope variable text. That text is converted to uppercase by using the uppercase filter.</p>
+        <h3>References:</h3>
+        <a href="http://www.w3schools.com/angular/tryit.asp?filename=try_ng_filters_uppercase" class="btn btn-success">W3 Schools</a>
+        <h3>Source Code</h3>
+        <a href="../../fileview/Default.aspx?~/experiments/week5/uppercase.html" class="btn btn-success" target="_blank">View HTML Source</a>
+        <a href="../../fileview/Default.aspx?~/experiments/week5/js/uppercase.js" class="btn btn-success" target="_blank">View javascript</a>
+        <p>
+
+
+        </p>
+    </div>
+</body>
+</html>
