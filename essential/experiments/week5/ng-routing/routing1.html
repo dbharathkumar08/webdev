@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Angular Routing</title>
+    <style>
+        body {
+            background-image:url("../../../images/gbg.jpg");
+            
+        }
+        #exp {
+            background-color:lightgray;
+            
+        }
+    </style>
+   
+    
+</head>
+<body ng-app="sampleApp">
+    <div class="container">
+        <h1>Angular Routing Introduction</h1>
+        <h3>About The Experiment</h3>
+        <p>
+            In this experiment I have tried my hands on main functionality of Angular, which is Single Page Application. Here there is a navigation-bar. When user clicks on different tabs, instead of redirected to other pages, those pages are loaded in the same page through <i>ng-view</i>. So here all components need not to be reloaded. Only those components which are changed, are reloaded.
+        </p>
+    </div>
+    <div class="container" id="exp">
+    <div class="row">
+    <div class="col-md-2">
+        <ul class="nav navbar-default">
+            <li><a href="#home"> Home </a></li>
+            <li><a href="#about"> About </a></li>
+            <li><a href="#profile"> Profile </a></li>
+        </ul>
+    </div>
+    <div class="col-md-10">
+        <div ng-view=""></div>
+    </div>
+    </div>
+    </div>
+
+    <div class="container">
+    <h3>Code Snippet</h3>
+    <pre>
+sampleApp.config(['$routeProvider',
+  function ($routeProvider) {
+      $routeProvider.
+        when('/home', {
+            templateUrl: 'templates/home.html',
+            controller: 'homeController'
+        }).
+        when('/about', {
+            templateUrl: 'templates/about.html',
+            controller: 'aboutController'
+        }).
+        when('/profile', {
+            templateUrl: 'templates/profile.html',
+            controller: 'profileController'
+        }).
+        otherwise({
+            redirectTo: '/home'
+        });
+  }]);
+    </pre>
+    </div>
+
+    <div class="container">
+        <h3>Description</h3>
+        <p>In this code snippet I have shown the routing controller which routes through different pages. config is inbuilt property of angular. It is used to provide control over routing. When user clicks on some navigation link, the conroller checks it against its list and transferts to the match found. To show the different nav, ng-view is used, which displays dynamically loaded content.</p>
+        <h3>References</h3>
+        <a href="https://docs.angularjs.org/tutorial/step_07" class="btn btn-primary" target="_blank">Angular Routing</a>
+        <h3>Source Code</h3>
+        <a href="../../fileview/Default.aspx?~/experiments/week5/ng-routing/routing1.html" class="btn btn-primary" target="_blank">View HTML Source</a>
+        <a href="../../fileview/Default.aspx?~/experiments/week5/js/rputing1.js" class="btn btn-primary" target="_blank">View javascript</a>
+        <p>
+
+        </p>
+    </div>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="../js/routing1.js"></script>
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />    
+
+</body>
+</html>
