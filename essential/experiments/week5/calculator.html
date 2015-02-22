@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="js/calculator.js"></script>
+    <style>
+        body {
+            background-image:url("../../images/gradient.jpg");
+            font-weight:800;
+             
+        }
+    </style>
+    
+</head>
+<body ng-app="app">
+    <div class="container">
+        <h1>Calculator using Angular JS</h1>
+        <h3>About The Experiment</h3>
+        <p>In this experiment, I have made a small calculator which calculates square and cube of given input using Angular. Here the <i>CalculatorController</i> has two functions for square and cube. The scope variable is <i>number</i> which is multiplied with itself depending on whether the function is square or cube.</p>
+    </div>
+    
+    <div ng-controller="CalculatorController" class="jumbotron">
+    
+        Enter a number:
+        <input type="number" ng-model="number" ng-click="clear()" />
+        <button ng-click="doSquare()" class="btn btn-success">X<sup>2</sup></button>
+        <button ng-click="doCube()" class="btn btn-success">X<sup>3</sup></button>
+     
+        <div >Answer: {{answer}}</div>
+    </div>
+    
+    <div class="container">
+        <h3>Code Snippet</h3>
+        <pre>
+app.controller('CalculatorController', function ($scope) {
+    $scope.clear = function () {
+        $scope.number = '';
+        $scope.answer = '';
+    }
+    $scope.doSquare = function () {
+        $scope.answer = $scope.number * $scope.number;
+    }
+    $scope.doCube = function () {
+        $scope.answer = $scope.number * $scope.number * $scope.number;
+    }
+});
+        </pre>
+        <h3>Description</h3>
+        <p>Here the code for controller is shown. It contains 3 function. <i>clear()</i> function clears out the answer and input by resetting their values to null. <i>doSquare()</i> function multiplies the scope variable number with itself twice and stroes the value in scope variable answer. <i>doCube()</i> function calls the <i>doSquare()</i> function on number and multiplies the answer with number again and stores the value in scope variable answer.</p>
+        <h3>References</h3>
+        <a href="http://viralpatel.net/blogs/angularjs-service-factory-tutorial/" class="btn btn-success" target="_blank">Angular JS tutorials</a>
+        <h3>Source Code</h3>
+        <a href="../../fileview/Default.aspx?~/experiments/week5/calculator.html" class="btn btn-success" target="_blank">View HTML Source</a>
+        <a href="../../fileview/Default.aspx?~/experiments/week5/js/calculator.js" class="btn btn-success" target="_blank">View javascript</a>
+        <p>
+
+        </p>
+    </div>
+
+</body>
+</html>

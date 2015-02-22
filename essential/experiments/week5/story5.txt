@@ -2,3 +2,4 @@
 editable.html Inline Editing Using Angular JS
 html_dom.html Changes in DOM using Angular
 ng-routing/routing1.html Intro to Angular Routing
+calculator.html Calculator Using Angular
