@@ -1,0 +1,5 @@
+﻿login.html	Profile Login
+profile.html User Profile
+edit_profile.html Edit User Profile
+profile_pic.html Upload Profile Picture
+courses.html Course Page

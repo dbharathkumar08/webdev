@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="js/login.js"></script>
+    <style>
+        body{
+            padding-top : 60px;
+        }
+    </style>
+</head>
+<body ng-app="CourseApp">
+    <div class="container" ng-controller="loginController">
+         <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project name</a>
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav left">
+                                <li><a href="#/home">Home</a></li>
+                                <li><a href="#/about">About</a></li>
+                                <li><a href="#/contact">Contact</a></li>
+                                
+                            </ul>
+
+                            <form ng-show="!currentUser" class="navbar-form navbar-right">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Username" ng-model="username" ng-click="clear()" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" ng-model="password" placeholder="Password" ng-click="psclear()" class="form-control">
+                                </div>
+                                <button type="submit" class={{color}} ng-click="login()">Sign in</button>
+                            </form>
+                        <form ng-show="currentUser" class="navbar-form navbar-right">
+                            
+                            <button type="submit" class="btn btn-danger" ng-click="logout()">Logout</button>
+                        </form>
+                        </div><!--/.navbar-collapse -->
+        </nav>
+        <div ng-view>
+
+        </div>
+        <div>
+        <hr />
+        <h1>About the Experiment</h1>
+        <p><b>Username: isha Password: isha</b></p>
+        <p><b>Username: root Password: root</b></p>
+        
+        <p>
+            In this experiment I have created different user profiles and provided the login facility. Using Angular,I have created the Service, View, Controller model. LoginService is the service which stores the user details and check it aginast the entered details. Then there is loginController which changes the view according to result returned by loginService.
+        </p>
+
+        <span id="text">
+            <pre>
+    $scope.login = function() {
+        var username = $scope.username;
+        var password = $scope.password;
+        var res = LoginService.login(username, password);
+        if (res == true) {
+            $scope.currentUser = LoginService.getCurrentUser();
+            $scope.color = &quot;btn btn-success&quot;;
+        } else {
+            $scope.color = &quot;btn btn-danger&quot;;
+        }
+    }
+
+    app.factory(&quot;LoginService&quot;, function () {
+        var login = function (username, password) {
+            for(var index in users) {
+                if(users[index].username == username &amp;&amp; users[index].password == password) {
+                    currentUser = users[index];
+                    return true;
+                }
+            }
+        return false;
+        }
+    }
+            </pre>
+        </span>
+
+    </div>
+
+    <hr />
+
+    <h1>Source Code</h1>
+    <div id="doc">
+        <a href="../../fileview/Default.aspx?~/experiments/week6/login.html"
+           target="_blank">View Source Code</a>
+    </div>
+    
+    <div id="Div5">
+        <a href="../../fileview/Default.aspx?~/experiments/week6/js/login.js"
+           target="_blank">View JS Code</a>
+    </div>
+    <hr />
+    <h1>Reference</h1>
+    <div id="Div6">
+        <a href="https://github.com/jannunzi/CS5610-2015-spring-net4.ccs.neu.edu/tree/master/cs5610/experiments/ngRouting">Prof.Jose's Lecture</a>
+    </div>
+        </div>
+    
+</body>
+</html>

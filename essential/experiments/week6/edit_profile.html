@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/codesnippets/sunburst.css" />
+    <script src="js/profile_edit.js"></script>
+    <style>
+        body{
+            padding-top : 60px;
+        }
+    </style>
+</head>
+<body ng-app="CourseApp">
+    <div class="container" ng-controller="loginController">
+         <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project name</a>
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav left">
+                                <li><a href="#/home">Home</a></li>
+                                <li><a href="#/about">About</a></li>
+                                <li><a href="#/contact">Contact</a></li>
+                                <li ng-show="currentUser"><a href="#/profile">Profile</a></li>                  
+                            </ul>
+
+                            <form ng-show="!currentUser" class="navbar-form navbar-right">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Username" ng-model="username" ng-click="clear()" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" ng-model="password" placeholder="Password" ng-click="psclear()" class="form-control">
+                                </div>
+                                <button type="submit" class={{color}} ng-click="login()">Sign in</button>
+                            </form>
+                        <form ng-show="currentUser" class="navbar-form navbar-right">
+                            
+                            <button type="submit" class="btn btn-danger" ng-click="logout()">Logout</button>
+                        </form>
+                        </div><!--/.navbar-collapse -->
+        </nav>
+        <div ng-view>
+
+        </div>
+        <div class="container">
+        <hr />
+        <h1>About the Experiment</h1>
+        <p><b>Username: isha Password: isha</b></p>
+        <p><b>Username: root Password: root</b></p>
+        
+        <p>
+            In this experiment, user is able to login to his profile and edit the information. There is additional controller provided here: ProfileController. This controller fetches the user information and displays it after user logs in. User can change that info and on save it. The next time user logs in, new info is shown to him.
+        </p>
+
+        <span id="text">
+            <pre class="prettyprint">
+  app.controller("ProfileController", function ($scope, loginService, $routeParams) {
+    var username = $routeParams.username;
+    $scope.username = username;
+    var currentUser = loginService.getCurrentUser();
+
+    $scope.new_fn = currentUser.firstName;
+    $scope.new_ln = currentUser.lastName;
+    $scope.new_mail = currentUser.email;
+    $scope.new_pwd = currentUser.password;
+    $scope.re_pwd = currentUser.password;
+
+    $scope.mismatch = false;
+    $scope.save = false;
+
+    $scope.saveChanges = function () {
+        var password = $scope.new_pwd;
+        var repassword = $scope.re_pwd;
+        var email = $scope.new_mail;
+        var firstName = $scope.new_fn;
+        var lastName = $scope.new_ln;
+
+        if (password != repassword) {
+            $scope.mismatch = true;
+            $scope.save = false;
+        } else {
+            $scope.mismatch = false;
+            $scope.save = true;
+            loginService.updateCurrentUser(password, email, firstName, lastName);
+        }
+    }
+});
+            </pre>
+        </span>
+            <h3>Description</h3>
+            <p>Here the code for controller ProfileController is shown. It gets the currentUser first and fetches the data of that user to display it in editing form. When user changes this data and saves it, it checks for the match of both passwords and shows error if match is not found. Otherwise, it passes new values as paramerters to loginService which stores the data of user. LoginService then updates the user data</p>
+    </div>
+
+    <hr />
+
+    <h1>Source Code</h1>
+    <div id="doc">
+        <a href="../../fileview/Default.aspx?~/experiments/week6/edit_profile.html"
+           target="_blank">View Source Code</a>
+    </div>
+    
+    <div id="Div5">
+        <a href="../../fileview/Default.aspx?~/experiments/week6/js/profile_edit.js"
+           target="_blank">View JS Code</a>
+    </div>
+
+        <div id="Div1">
+        <a href="../../fileview/Default.aspx?~/experiments/week6/courseApp/profile_edit.html"
+           target="_blank">View Profile Code</a>
+    </div>
+    <hr />
+    <h1>Reference</h1>
+    <div id="Div6">
+        <a href="https://github.com/jannunzi/CS5610-2015-spring-net4.ccs.neu.edu/tree/master/cs5610/experiments/ngRouting">Prof.Jose's Lecture</a>
+    </div>
+        </div>
+</body>
+</html>
