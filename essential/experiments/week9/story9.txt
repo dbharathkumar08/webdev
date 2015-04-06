@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/week9/story9.txt What is Next
+rating.html			Star Rating
+autocomplete.html   Place Search Autocomplete
+background_video.html   Playing video in the background of home page
+signupmodal.html   Sign Up Modal
+travel_dest.html   Search Travel Destionations in a City

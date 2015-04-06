@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Developer IDE</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/codesnippets/sunburst.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            padding-top : 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <hr />
+        <div class="jumbotron">
+            <h1>Developer Info using Node js</h1>
+            <h6>Click on the link below to see the experiment</h6>
+            <a href="http://developeride-ishashah112.rhcloud.com/EXP1.html" target="_blank">Developer IDE CRUD Operations</a>
+        </div>
+        <h2>About the Experiment</h2>
+        
+        <p>
+            In this experiment I have used Openshift instead of IIS server to host the Node experiments as Node is not supported by IIS. Here I have created a simple server which maintains the Developer information. From the front-end user can perform various operations like edit, remove, add new developer <b>(CRUD operations)</b>. For front end I have used Angular and for the server, I have used Node. We use various http commands like 'get','post' to retrive and post the data from server. Front end, Angular JS and Node as together represents nice example of MVC architecture.
+        </p>
+
+        <span id="text">
+            <pre class="prettyprint">
+app.get("/developer", function (req, res) {
+    res.json(developers);
+});
+
+app.get("/developer/:index", function (req, res) {
+    var idx = req.params.index;
+    res.json(developers[idx]);
+});
+
+app.delete("/developer/:index", function (req, res) {
+    var idx = req.params.index;
+    developers.splice(idx, 1);
+    res.json(developers);
+});
+
+app.post("/developer", function (req, res) {
+    var obj = req.body;
+    developers.push(obj);
+    res.json(developers);
+
+});
+            </pre>
+        </span>
+    <h3>Description</h3>
+    <p>
+        Here code snippets for adding, deleting and retreiving is shown. 
+        <ul>
+            <li>If we het http get request, we will return the developer array or a specific developer if the index is specified.</li>
+            <li>For delete, we get the index from request parameters and then we splice the developer array at given index by 1.</li>
+            <li>For post, we take the object from body using body-parser and add that info in developer array.</li>
+        </ul>
+    </p>
+    
+
+    <hr />
+    <div class="h4">
+    <h1>Source Code</h1>
+
+    <a href="../../fileview/Default.aspx?~/experiments/developeride/public/EXP1.html" target="_blank">View Source Code</a><hr />
+    <a href="../../fileview/Default.aspx?~/experiments/developeride/public/js/clientApp.js" target="_blank">Client Side javascript</a><hr />
+    <a href="../../fileview/Default.aspx?~/experiments/developeride/server.js">Server Side Javascript</a>
+    <hr />
+    <h1>Reference</h1>
+    Prof.Jose's Lecture
+        </div>
+    </div>
+</body>
+</html>

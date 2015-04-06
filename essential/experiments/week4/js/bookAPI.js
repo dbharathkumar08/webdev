@@ -28,16 +28,6 @@
             $scope.favBooks.splice(index, 1);
         }
 
-       /* $scope.addBook = function () {
-            var info = {
-                title: $scope.book.volumeInfo.title,
-                authors: $scope.book.volumeInfo.authors,
-                categories: $scope.book.volumeInfo.categories,
-                description: $scope.book.volumeInfo.description,
-                averageRating: $scope.book.volumeInfo.averageRating
-            }
-            
-            $scope.books.push(newBook);
-        }*/
+      
         });
     

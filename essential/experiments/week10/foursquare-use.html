@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Use Of FourSquare API to get Travel Destinations</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/codesnippets/sunburst.css" />
+    <script src="js/fs-use.js"></script>
+</head>
+<body ng-app="PlacesApp">
+    <div ng-controller="ListController" class="container" id="content">
+        <h2>Search Places</h2>
+        <div class="input-group">
+            <input type="text" ng-model="searchByCity" class="form-control" id="city" contenteditable="true" placeholder="Enter the City Name"/>
+            <span class="input-group-btn">
+                <button ng-click="searchPlaces()" class="btn btn-primary" type="button" >Search!</button>
+            </span>
+        </div>
+         <table class="table">
+            <caption ng-show="destinations"><h2>Tourist Attractions in the City</h2></caption>
+             <thead>
+                 <tr>
+                     <th>Attraction Name</th>
+                     <th>Catagory</th>
+                     <th>Attraction Tips</th>
+                     <th>Rating</th>
+                     <th>Photo</th>
+                 </tr>
+             </thead>
+            <tbody>
+
+                <tr ng-repeat="dest in destinations">
+                    <td>{{dest.venue.name}}</td>
+                    <td>{{dest.venue.categories[0].name}}</td>
+                    <td>{{dest.tips[0].text}}</td>
+                    <td>{{dest.venue.rating}}</td>
+                    <td><img class="poster" ng-src="{{dest.tips[0].photourl}}" width="100" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

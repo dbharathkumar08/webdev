@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Add New User
+    </title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/codesnippets/sunburst.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            padding-top : 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <hr />
+        <div class="jumbotron">
+            <h1>Add new user using Node</h1>
+            <h6>Click on the link below to see the experiment</h6>
+            <a href="http://developeride-ishashah112.rhcloud.com/EXP5.html" target="_blank">Add new User</a>
+        </div>
+        <p><b>Username: isha Password: isha</b></p>
+        <p><b>Username: admin Password: admin</b></p>
+        <h2>About the Experiment</h2>
+        
+        <p>
+            In this experiment, I have continued with user profile as done in Angular experiments. But here, I am storing the user info on server so that it maintains the state till the server is on. In this experiment, I have provided a functionaloty of registering a new user. Here one can register himself as new user and use that credential to login.
+        </p>
+
+        <span id="text">
+            <pre class="prettyprint">
+   app.controller("UserController", function ($scope, loginService, $routeParams) {
+
+    $scope.addUser = function () {
+        var username = $scope.username;
+        var password = $scope.new_pwd;
+        var repassword = $scope.re_pwd;
+        var email = $scope.new_mail;
+        var firstName = $scope.new_fn;
+        var lastName = $scope.new_ln;
+        var photo = "";
+        if (password != repassword) {
+            $scope.mismatch = true;
+            $scope.save = false;
+        } else {
+            $scope.mismatch = false;
+            
+            loginService.addUser(username, password, email, firstName, lastName, photo, callback);
+        }
+    }
+
+    function callback(res) {
+        if (res == true) {
+            $scope.save = true;
+            $scope.save_msg = "User Added Successfully";
+        }
+        
+
+    };
+});
+
+var addUser = function (username ,password, email, firstName, lastName,photo, callback) {
+
+        var user = {
+            username: username,
+            password: password,
+            email: email,
+            firstName: firstName,
+            lastName: lastName,
+            photo: photo
+        };
+
+        $http.post('/add', user)
+        .success(function (response) {
+            callback(true);
+        });
+}
+            </pre>
+        </span>
+    <h3>Description</h3>
+    <p>
+       Here I have created a different controller <b>UserController</b> to create a new user. This controller contains the function <b>addUser</b> which takes the entered inputs in the UI form and passes it to loginService's adduser function. This function stores all those params in a user and does a http post to server and passes that user as parameter.
+    </p>
+    
+
+    <hr />
+    <div class="h4">
+    <h1>Source Code</h1>
+
+    <a href="../../fileview/Default.aspx?~/experiments/developeride/public/EXP5.html" target="_blank">View Source Code</a><hr />
+    <a href="../../fileview/Default.aspx?~/experiments/developeride/public/js/adduser.js" target="_blank">Client Side javascript</a><hr />
+    <a href="../../fileview/Default.aspx?~/experiments/developeride/server.js">Server Side Javascript</a>
+    <hr />
+    <h1>Reference</h1>
+    Prof.Jose's Lecture
+        </div>
+    </div>
+</body>
+</html>

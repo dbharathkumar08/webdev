@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Place Autocomplete</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/codesnippets/sunburst.css" />
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?libraries=places&region=us&language=en&sensor=false"></script>
+    <script src="js/autocomplete.js"></script>
+    <style>
+        body {
+            background-image:url("css/travel.jpg");
+             
+        }
+        #blur {
+            margin-top:20px;
+            background: rgba(0,0,0,0.6);
+            color:ghostwhite;
+        }
+        a {
+            font-size:large;
+            color:lightcoral;
+        }
+        #footer {
+            margin-top:20px;
+            margin-bottom:20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Place Search Autocomplete</h1>
+        <input type="text" id="cityname" class="form-control" placeholder="Enter a City Name" />
+        
+    </div>
+    <div class="container" id="blur">
+        <h2>About The Experiment</h2>
+        <p>In this experiment I have used the Google maps API for providing the option for autocomplete. I need the user to enter any city he has visited, so I have restricetd the search to cities only.</p>
+        <h2>Code Snippet</h2>
+        <pre class="prettyprint">
+$(function () {
+    var options = {
+        types: ['(cities)']
+    };
+
+    var input = document.getElementById('cityname');
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+});
+        </pre>
+        <h3>Description</h3>
+        <p>Here in this code I have shown the usage of maps API for autocompletion. The text entered in the input box is stored in a variable and that variable is passed to API for Autocomplete along with <i>options</i> constraint. This constraint limits the search to city names only.</p>
+        <hr />
+        <h3>References</h3>
+        <a href="https://developers.google.com/places/webservice/autocomplete" target="_blank">Google Developers Places Autocomplete</a>
+        <hr />
+        <h3>Source Code</h3>
+        <a href="../../fileview/Default.aspx?~/experiments/week9/autocomplete.html" target="_blank">View HTML Code</a><hr />
+        <a href="../../fileview/Default.aspx?~/experiments/week9/js/autocomplete.js" target="_blank">View javascript</a><hr />
+       
+    </div>
+    <div class="container" id="footer">
+     <div class="row">
+         <div class="col-sm-1">
+            <a href="http://www.facebook.com/isha.shah.1840" target="_blank"><img src="css/Social icons Hand Drawn/Facebook/48x48.png" title="Facebook"/></a>
+        </div>
+         <div class="col-sm-1">
+            <a href="http://www.linkedin.com/in/ishashah112/en" target="_blank"><img src="css/Social icons Hand Drawn/linkedin/48x48.png" title="Linkedin"/></a>
+        </div>
+         <div class="col-sm-1">
+             <a href="https://github.com/isha112/webdev" target="_blank"><img src="css/Social icons Hand Drawn/Git/Aquicon-Github.png" width="48" height="48" title="GitHub"/></a>
+         </div>
+        </div>
+    </div>
+    
+</body>
+</html>

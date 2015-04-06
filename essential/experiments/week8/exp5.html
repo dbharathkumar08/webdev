@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Browse User Profiles</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/codesnippets/sunburst.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            padding-top : 60px;
+            background-image:url("../../images/gbg.jpg");
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <hr />
+        <div class="jumbotron">
+            <h2>Browsing through user profiles</h2>
+            <h6>Click on the link below to see the experiment</h6>
+            <a href="http://developeride-ishashah112.rhcloud.com/SEARCH.html" target="_blank">Browse through User Profiles</a>
+        </div>
+        <h2>About the Experiment</h2>
+        <h4>Credentails:</h4>
+        <p>
+           
+            <ul>
+                <li>username:isha, password:phoenix</li>
+                <li>username:admin, password:root</li>
+            </ul>
+        </p>
+        <p>
+            In this experiment, after logging in, a user can see other user's profile: their basic information. This will be further enhanced to be used in my project to view other people's profiles, follow them,like and review their portfolios.
+        </p>
+        <h3>Code Snippet</h3>
+        <span id="text">
+            <pre class="prettyprint">
+app.get('/mongod/search', function (req, res) {
+
+    var query = UserModel.find({}).select('username');
+    query.exec(function (err, data) {
+        res.json(data);
+    });
+});
+app.post('/mongod/browser', function (req, res) {
+    var username = req.body.username;
+    var returnuser = null;
+    
+    UserModel.find({ username: username }, function (err, data) {
+
+        returnuser = {
+            username: data[0].username,
+            email: data[0].email,
+            firstName: data[0].firstName,
+            lastName: data[0].lastName,
+            photo: data[0].photo
+        }
+        res.json(returnuser);
+    });
+
+
+});
+            </pre>
+        </span>
+        <h3>
+            Description
+        </h3>
+        <p>Here in this code snippet, the first part shows how all the current usernames are retrieved. I have datalist to display the usernames. So as user types in, he will get the suggestions. I will try to enhance that in the project. In the second snippet, using the selected username, user data is retrieved and only necessary information which will not violate user security is displayed on the page.
+        <div class="h4">
+            <h1>Source Code</h1>
+
+                <a href="../../fileview/Default.aspx?~/experiments/developeride/public/mongodb/SEARCH.html" target="_blank">View Source Code</a><hr />
+                <a href="../../fileview/Default.aspx?~/experiments/developeride/public/mongodb/js/browse.js" target="_blank">Client Side javascript</a><hr />
+                <a href="../../fileview/Default.aspx?~/experiments/developeride/server.js">Server Side Javascript</a>
+                <hr />
+            <h1>Reference</h1>
+                Prof.Jose's Lecture
+        </div>
+    </div>
+</body>
+</html>

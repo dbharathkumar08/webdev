@@ -1,0 +1,4 @@
+﻿../../story/whatisnext.htm?../experiments/week10/story10.txt What is Next
+index.html			Home Page 
+foursquare-use.html   Place Search Using Foursquare API
+fsandfb.html   Usage of foursquare and freebase API for place search and getting details

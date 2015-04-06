@@ -1,0 +1,65 @@
+﻿
+    <h1>Edit Profile</h1>
+    <h4>of {{currentUser.firstName}}</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-9 personal-info">
+            <div ng-show="mismatch" class="alert alert-info alert-dismissable">
+                <i class="fa fa-coffee">Please verify the entered password</i>
+                
+            </div>
+            <div ng-show="save" class="alert alert-info alert-dismissable">
+                <i class="fa fa-coffee">Saved</i>
+                
+            </div>
+            <h3>Personal info</h3>
+
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">First name:</label>
+                    <div class="col-lg-8">
+                        <input ng-model="new_fn" class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Last name:</label>
+                    <div class="col-lg-8">
+                        <input ng-model="new_ln" class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-8">
+                        <input ng-model="new_mail" class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Username:</label>
+                    <div class="col-md-8">
+                        {{user.username}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Password:</label>
+                    <div class="col-md-8">
+                        <input ng-model="new_pwd" class="form-control" type="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Confirm password:</label>
+                    <div class="col-md-8">
+                        <input ng-model="re_pwd" class="form-control" type="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <input class="btn btn-primary" value="Save Changes" ng-click="saveChanges()" type="button">
+                        <span></span>
+                        <input class="btn btn-default" value="Cancel" type="reset">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+

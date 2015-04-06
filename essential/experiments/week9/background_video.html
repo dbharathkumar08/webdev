@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Play Video in Background of the Home Page</title>
+    <link rel="stylesheet" type="text/css" href="css/video.css" />
+    
+</head>
+<body>
+    
+    <video id="bgvid" poster="css/collage.jpg" autoplay loop muted>
+        <!--<source src="css/travel.webm" type="video/webm" />-->
+        <source src="css/travel.mp4" type="video/mp4" />
+    </video>
+    <div id="bg">
+        <div id="bgbtn">
+          <button id="btn">Pause</button>
+        </div>
+        <h2>About The Experiment</h2>
+        <p>In this experiment, I have tried playing a video in the background which will be my project home page. CSS does not support videos as background but HTML5 supports that. Here I have deon that through autolooping <strong>video</strong> tag. Also user can pause/unpause the video at his will.</p>
+        <h3>Code Snippet</h3>
+        <pre>
+&lt;video id="bgvid" poster="css/collage.jpg" autoplay loop muted&gt;
+&lt;source src="css/travel.mp4" type="video/mp4" /&gt;
+&lt;/video&gt;
+            
+pauseButton.addEventListener("click", function () {
+    
+    vid.classList.toggle("stopfade");
+    if (vid.paused) {
+        vid.play();
+        pauseButton.innerHTML = "Pause";
+    } else {
+        vid.pause();
+        pauseButton.innerHTML = "Paused";
+    }
+})
+        </pre>
+        <h3>Description</h3>
+        <p>
+            Here in the first snippet, it shown how to put a video as background and repeat it. Here for the start of the video, the image in poster will be used and then after the video will start. In the second snippet, the code for puase/unpause is shown. So it works as a toggle. The fading effect will be done/undone after every toggle and if the video is playing it will be paused and vise-a-versa.
+        </p>
+        <h3>References</h3>
+        <a href="http://demosthenes.info/blog/777/Create-Fullscreen-HTML5-Page-Background-Video">DemosThenes</a>
+        <h4>Source Code</h4>
+        <a href="../../fileview/Default.aspx?~/experiments/week9/background_video.html" target="_blank">View HTML Code</a><hr />
+        <a href="../../fileview/Default.aspx?~/experiments/week9/css/video.css" target="_blank">View CSS</a><hr />
+        <a href="../../fileview/Default.aspx?~/experiments/week9/js/playvideo.js" target="_blank">View javascript</a><hr />
+    </div>
+    
+          
+<script src="js/playvideo.js"></script>
+</body>
+</html>

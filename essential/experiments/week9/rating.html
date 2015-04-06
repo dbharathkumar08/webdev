@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Star Rating</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/rateit.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/jquery.rateit.min.js"></script>  
+    <style>
+        body {
+            background-image:url("css/paris.jpg");
+             
+        }
+        #blur {
+            background: rgba(0,0,0,0.5);
+            color:wheat;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <div class="breadcrumb">
+        <div class="container">
+            <h1>Rate me!!</h1>
+            <div class="rateit" id="rateit5">
+        </div>
+        </div>
+    </div>
+    <div class="container" id="blur">
+
+        <span id="value5"></span>
+        <h2>About the Experiment</h2>
+        
+        <p>
+            From this week I will be posting the experiments related to my project. Here in this experiment, I have displayed the usage of star ratings. We are supposed to comment on some user portfolio or search object and maybe rate it too. So I have added this star rating for that. I am using a plugin <i>rateit</i> for it. It uses css and jQuery to display the visual effects.
+        </p>
+        <div class="h4">
+            <h1>Source Code</h1>
+            <a href="../../fileview/Default.aspx?~/experiments/week9/rating.html" target="_blank">View HTML Code</a><hr />
+            <a href="../../fileview/Default.aspx?~/experiments/week9/js/jquery.rateit.js" target="_blank">View javascript</a><hr />
+            
+            
+        <h1>References</h1>
+            <a href="https://rateit.codeplex.com/">Rateit Plugin</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $("#rateit5").bind('rated', function (event, value) { $('#value5').text('You\'ve rated it: ' + value); });
+        $("#rateit5").bind('reset', function () { $('#value5').text('Rating reset'); });
+        $("#rateit5").bind('over', function (event, value) { $('#hover5').text('Hovering over: ' + value); });
+    </script>   
+</body>
+</html>

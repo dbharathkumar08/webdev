@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Upload Profile Pic
+    </title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/codesnippets/sunburst.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            padding-top : 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <hr />
+        <div class="jumbotron">
+            <h1>Upload Profile Pic using Node</h1>
+            <h6>Click on the link below to see the experiment</h6>
+            <a href="http://developeride-ishashah112.rhcloud.com/EXP4.html" target="_blank">User profile edit:upload profile pic</a>
+        </div>
+        <p><b>Username: isha Password: isha</b></p>
+        <p><b>Username: admin Password: admin</b></p>
+        <h2>About the Experiment</h2>
+        
+        <p>
+            In this experiment, I have continued with user profile as done in Angular experiments. But here, I am storing the user info on server so that it maintains the state till the server is on. In this experiment, after logging in, the user is able to see his profile as well as edit the data. Here also user is able to upload his profile pic which is stored in server till it gets restarted.
+        </p>
+
+        <span id="text">
+            <pre class="prettyprint">
+    app.post('/update', function (req, res) {
+
+    var user = req.body;
+    var currentUser = null;
+
+    for (var index in users) {
+        if (users[index].username == user.username) {
+            users[index].firstName = user.firstName;
+            users[index].lastName = user.lastName;
+            users[index].email = user.email;
+            users[index].password = user.password;
+            users[index].photo = user.photo;
+            currentUser = users[index];
+        }
+    }
+
+    res.json(currentUser);
+});
+            </pre>
+        </span>
+    <h3>Description</h3>
+    <p>
+       If the link points to 'update' then, we take the updated user data from request body. Then using the index, we reset the data of that particular user from the user data we got from request.
+    </p>
+    
+
+    <hr />
+    <div class="h4">
+    <h1>Source Code</h1>
+
+    <a href="../../fileview/Default.aspx?~/experiments/developeride/public/EXP4.html" target="_blank">View Source Code</a><hr />
+    <a href="../../fileview/Default.aspx?~/experiments/developeride/public/js/dp.js" target="_blank">Client Side javascript</a><hr />
+    <a href="../../fileview/Default.aspx?~/experiments/developeride/server.js">Server Side Javascript</a>
+    <hr />
+    <h1>Reference</h1>
+    Prof.Jose's Lecture
+        </div>
+    </div>
+</body>
+</html>

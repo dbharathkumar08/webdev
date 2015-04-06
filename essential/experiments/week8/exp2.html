@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>User Login Using Data from MongoDB</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/codesnippets/sunburst.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            padding-top : 60px;
+            background-image:url("../../images/gbg.jpg");
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <hr />
+        <div class="jumbotron">
+            <h2>User Login using Node js and MongoDB</h2>
+            <h6>Click on the link below to see the experiment</h6>
+            <a href="http://developeride-ishashah112.rhcloud.com/login.html" target="_blank">User login Using Mongo</a>
+        </div>
+        <h2>About the Experiment</h2>
+         <h4>Credentails:</h4>
+        <p>
+           
+            <ul>
+                <li>username:isha, password:phoenix</li>
+                <li>username:admin, password:root</li>
+            </ul>
+        </p>
+        <p>
+            In this experiment, I have stored the user credential in <i>UserModel</i> collection in the MongoDB. I have tried connectiong to the database and use that data to login. 
+        </p>
+        <h3>Code Snippet</h3>
+        <span id="text">
+            <pre class="prettyprint">
+var UserSchema = new mongoose.Schema({
+    username: String,
+    password: String,
+    email: String,
+    firstName: String,
+    lastName: String,
+    photo: String
+}, { collection: 'user' });
+
+var UserModel = mongoose.model('UserModel', UserSchema);
+app.post('/mongod/login', function (req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    var currentUser = null;
+
+    UserModel.count({ username: username, password: password }, function (err, c) {
+        var cnt = c;
+        if (cnt > 0) {
+            UserModel.find({ username: username, password: password }, function (err, data) {
+                currentUser = data;
+                res.json(data);
+            });
+        }
+        else {
+            res.json(currentUser);
+        }
+    });
+
+
+});
+            </pre>
+        </span>
+        <h3>Description</h3>
+        <p>Here in this code snippet, I have shown the schema for the UserModel which is used in collection <i>user</i>. For login, the username and password are passed as json object to the backend which forwards that data to the server which checks whether such user exists or not. If he exists, the data is set as currentUser otherwise currentUser is set as Null and returned.</p>
+        <div class="h4">
+            <h1>Source Code</h1>
+
+                <a href="../../fileview/Default.aspx?~/experiments/developeride/public/mongodb/login.html" target="_blank">View Source Code</a><hr />
+                <a href="../../fileview/Default.aspx?~/experiments/developeride/public/mongodb/js/login.js" target="_blank">Client Side javascript</a><hr />
+                <a href="../../fileview/Default.aspx?~/experiments/developeride/server.js">Server Side Javascript</a>
+                <hr />
+            <h1>Reference</h1>
+                Prof.Jose's Lecture
+        </div>
+   </div>
+</body>
+</html>

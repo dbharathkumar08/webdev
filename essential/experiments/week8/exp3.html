@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>User Profile Editing Using Mongo</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/codesnippets/sunburst.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            padding-top : 60px;
+            background-image:url("../../images/gbg.jpg");
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <hr />
+        <div class="jumbotron">
+            <h2>Edit User Profile Using Node and Mongo</h2>
+            <h6>Click on the link below to see the experiment</h6>
+            <a href="http://developeride-ishashah112.rhcloud.com/profile-editor.html" target="_blank">User Profile Edit Using Mongo</a>
+        </div>
+        <h2>About the Experiment</h2>
+        <h4>Credentails:</h4>
+        <p>
+           
+            <ul>
+                <li>username:isha, password:phoenix</li>
+                <li>username:admin, password:root</li>
+            </ul>
+        </p>
+        <p>
+            In this experiment, I have stored the user credential in <i>UserModel</i> collection in the MongoDB. I have tried connectiong to the database and use that data to login. 
+        </p>
+        <h3>Code Snippet</h3>
+        <span id="text">
+            <pre class="prettyprint">
+app.post('/mongod/update', function (req, res) {
+
+    var currentUser = null;
+    var username = req.body.username;
+    console.log(username);
+    UserModel.update({ username: username }, { $set: req.body }, function (err, data) {
+        UserModel.find(function (err, data) {
+            res.json(data);
+        });
+    });
+
+});
+            </pre>
+        </span>
+        <h3>
+            Description
+        </h3>
+        <p>
+            Here we are using http post for updating the data in database. From user json object, the username is matched against database entries and for the match, the record is updated with given user data in request.
+        </p>
+        <div class="h4">
+            <h1>Source Code</h1>
+
+                <a href="../../fileview/Default.aspx?~/experiments/developeride/public/mongodb/profile-editor.html" target="_blank">View Source Code</a><hr />
+                <a href="../../fileview/Default.aspx?~/experiments/developeride/public/mongodb/js/edit.js" target="_blank">Client Side javascript</a><hr />
+                <a href="../../fileview/Default.aspx?~/experiments/developeride/server.js">Server Side Javascript</a>
+                <hr />
+            <h1>Reference</h1>
+                Prof.Jose's Lecture
+        </div>
+    </div>
+</body>
+</html>

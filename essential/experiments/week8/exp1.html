@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Developer Details</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/codesnippets/sunburst.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            padding-top : 60px;
+            background-image:url("../../images/gbg.jpg");
+            
+        }
+    </style>
+</head>
+<body>
+     <div class="container">
+        <hr />
+        <div class="jumbotron">
+            <h2>Developer Info using Node js and MongoDB</h2>
+            <h6>Click on the link below to see the experiment</h6>
+            <a href="http://developeride-ishashah112.rhcloud.com/developers.html" target="_blank">Developer IDE CRUD Operations Using Mongo</a>
+        </div>
+        <h2>About the Experiment</h2>
+        
+        <p>
+            In this experiment, I have added to last week's experiment of developer data using Node on Openshift. There, I was maintaining the data on server, so everytime the server was restarted, the data used to vanish. Instead here I am using MongoDB to store and fetch the data. I have used the MongoDB and RockMongo on openshift for connecting to the database.
+        </p>
+        <h3>Code Snippet</h3>
+        <span id="text">
+            <pre class="prettyprint">
+var DeveloperSchema = new mongoose.Schema({
+    name: String,
+    lang: String,
+    experience: String
+}, { collection: 'developer' });
+
+var DeveloperModel = mongoose.model('DeveloperModel', DeveloperSchema);
+
+app.get("/mongod/developer/:id", function (req, res) {
+    DeveloperModel.findById(req.params.id, function (err, doc) {
+        res.json(doc);
+    });
+
+});
+app.put("/mongod/developer/:id", function (req, res) {
+
+    DeveloperModel.findById(req.params.id, function (err, doc) {
+        doc.name = req.body.name;
+        doc.lang = req.body.lang;
+        doc.experience = req.body.experience;
+        doc.save(function (err, doc) {
+            DeveloperModel.find(function (err, data) {
+                res.json(data);
+            });
+        });
+    });
+});
+            </pre>
+        </span>
+         <h3>Description</h3>
+         <p>
+             Here in the code snippet, I have shown the schema for the developer collection. It contains three fields namely, name,language and experience.User then can add some developer by using app.post and pass the developer data as json object. To update a developer's info, app.put is used which gets the id of that developer and finds that record from database and updates it. To delete a record app.delete is used provided the developer id.
+         </p>
+          <div class="h4">
+    <h1>Source Code</h1>
+
+    <a href="../../fileview/Default.aspx?~/experiments/developeride/public/mongodb/developers.html" target="_blank">View Source Code</a><hr />
+    <a href="../../fileview/Default.aspx?~/experiments/developeride/public/mongodb/js/clientApp.js" target="_blank">Client Side javascript</a><hr />
+    <a href="../../fileview/Default.aspx?~/experiments/developeride/server.js">Server Side Javascript</a>
+    <hr />
+    <h1>Reference</h1>
+    Prof.Jose's Lecture
+        </div>
+    </div>
+</body>
+</html>

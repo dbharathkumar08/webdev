@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Profile Edit</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <script src="js/bootstrap.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/sunburst.css" />
+    
+    
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js1/edit.js"></script>
+    <style>
+        body{
+            padding-top : 60px;
+        }
+    </style>
+</head>
+<body ng-app="CourseApp">
+    <div class="container" ng-controller="loginController">
+         <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project name</a>
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav left">
+                                <li><a href="#/home">Home</a></li>
+                                <li><a href="#/about">About</a></li>
+                                <li><a href="#/contact">Contact</a></li>
+                                <li ng-show="currentUser"><a href="#/profile/{{currentUser[0].username}}">Profile</a></li>                  
+                            </ul>
+
+                            <form ng-show="!currentUser" class="navbar-form navbar-right">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Username" ng-model="user.username" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" ng-model="user.password" placeholder="Password" class="form-control">
+                                </div>
+                                <button type="submit" class={{color}} ng-click="login()">Sign in</button>
+                            </form>
+                        <form ng-show="currentUser" class="navbar-form navbar-right">
+                            
+                            <button type="submit" class="btn btn-danger" ng-click="logout()">Logout</button>
+                        </form>
+                        </div><!--/.navbar-collapse -->
+        </nav>
+        <div ng-view>
+
+        </div>
+        
+        </div>
+</body>
+</html>

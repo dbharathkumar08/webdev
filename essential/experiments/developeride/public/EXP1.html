@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Index Page</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <script src="js/bootstrap.js"></script>
+    
+    <script src="js/angular.js"></script>
+    <script src="js/clientApp.js"></script>
+    
+    
+</head>
+<body ng-app="DeveloperApp">
+    <div class="jumbotron">
+        <h1>Home Page</h1>
+    </div>
+    <div class="container" ng-controller="DeveloperController">
+        
+        <table class="table table-striped">
+            <thead>
+                <th>Name</th>
+                <th>Language</th>
+                <th>Experience</th>
+            </thead>
+            <tbody>
+                <h3>Add Developer</h3>
+                <tr>
+                    <th>
+                        <input class="form-control" ng-model="developer.name" />
+                    </th>
+                    <th>
+                        <input class="form-control" ng-model="developer.lang" />
+                    </th>
+                    <th>
+                        <input class="form-control" ng-model="developer.experience" />
+                    </th>
+                    <th>
+                        <button ng-click="add(developer)" class="btn btn-success">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </th>
+                    <th>
+                        <button ng-click="update(developer)" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </th>
+                </tr>
+                <tr ng-repeat="developer in developers">
+                    <td>{{developer.name}}</td>
+                    <td>{{developer.lang}}</td>
+                    <td>{{developer.experience}}</td>
+                    <td>
+                        <button ng-click="remove($index)" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                     <td>
+                        <button ng-click="select($index)" class="btn btn-warning">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+    
+</html>

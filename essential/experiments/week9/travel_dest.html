@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Get Travel Destinations of a City</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/codesnippets/sunburst.css" />
+    <script src="js/dest.js"></script>
+    <style>
+        body {
+            background-image:url("css/collage.jpg");
+             
+        }
+        #content {
+            background: rgba(0,0,0,0.8);
+            color:wheat;
+        }
+    </style>
+</head>
+<body ng-app="TravelApp">
+    <div ng-controller="infocontroller" class="container" id="content">
+        <h2>Search Places</h2>
+        <div class="input-group">
+            <input type="text" ng-model="searchByCity" class="form-control" id="city" contenteditable="true" placeholder="Enter the City Name"/>
+            <span class="input-group-btn">
+                <button ng-click="searchPlaces()" class="btn btn-primary" type="button" >Search!</button>
+            </span>
+        </div>
+         <table class="table">
+            <caption ng-show="destinations"><h2>Tourist Attractions in the City</h2></caption>
+             <thead>
+                 <tr>
+                     
+                     <th>Attraction</th>
+                 </tr>
+             </thead>
+            <tbody>
+
+                <tr ng-repeat="dest in destinations">
+                    
+                    <td>{{dest.text}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h1>About The Experiment</h1>
+        <p>In this experiment,I have shown the usage of one of the APIs I will be using in my project. <strong>FreeBase API</strong> allows you to make a free text search. Here I have used it for retreiving famous tourist destinations of a city. When User enters a city name, it is embedded in the http GET request and sent to the API. The API in turn returns a json object from which the array of destinations is retrieved and displayed on the page.  </p>
+        <h3>Code Snippet</h3>
+        <pre class="prettyprint">
+ $scope.searchPlaces = function () {
+        var name = $scope.searchByCity;
+        
+        $http.get("https://www.googleapis.com/freebase/v1/topic/en/" + name + "/?props=&lang=en&filter=%2Ftravel%2Ftravel_destination%2Ftourist_attractions&limit=30&key=xxxxxxxxxxxxxxxxxxxxxxxxx")
+        .success(function (places) {
+            var travel = "/travel/travel_destination/tourist_attractions";
+            var destinations = places.property[travel].values;
+            $scope.destinations = destinations;
+
+        })
+    }
+        </pre>
+        <h3>Description</h3>
+        <p>In this code snippet I have shown the javascript code for retrieving data from API. Here the city name entered by the user is passed in the request and the response is then stored in destinations variable. Then on front end, ng-repeat module is used to traverse through the data.</p>
+        <h3>References</h3>
+        <h5>Prof. Jose's Lectures and my previous experiments</h5>
+        <h3>Source Code</h3>
+        <a href="../../fileview/Default.aspx?~/experiments/week9/travel_dest.html" target="_blank">View HTML Code</a><hr />
+        <a href="../../fileview/Default.aspx?~/experiments/week9/css/dest.css" target="_blank">View javascript</a><hr />
+        
+    </div>
+</body>
+</html>

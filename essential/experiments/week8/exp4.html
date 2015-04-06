@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Adding a new user in the database</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/codesnippets/sunburst.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            padding-top : 60px;
+            background-image:url("../../images/gbg.jpg");
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <hr />
+        <div class="jumbotron">
+            <h2>Adding New User using Node js and MongoDB</h2>
+            <h6>Click on the link below to see the experiment</h6>
+            <a href="http://developeride-ishashah112.rhcloud.com/adduser.html" target="_blank">Add new user in Database</a>
+        </div>
+        <h2>About the Experiment</h2>
+        <h4>Credentails:</h4>
+        <p>
+           
+            <ul>
+                <li>username:isha, password:phoenix</li>
+                <li>username:admin, password:root</li>
+            </ul>
+        </p>
+        <p>
+            In this experiment, I have provided an option of registration to the user. Here the info entered by user is passed to Node server as json object and then that object is inserted in the user collection.
+        </p>
+        <h3>Code Snippet</h3>
+        <span id="text">
+            <pre class="prettyprint">
+app.post('/mongod/add', function (req, res) {
+
+    var username = req.body.username;
+    var password = req.body.password;
+    var email = req.body.email;
+    var firstName = req.body.firstName;
+    var lastName = req.body.lastName;
+    var photo = req.body.photo;
+
+
+    UserModel.find({ username: username }, function (err, data) {
+        if (data.length > 0) {
+            res.json({ response: 'false' });
+        } else {
+            new UserModel({
+                username: username,
+                password: password,
+                email: email,
+                firstName: firstName,
+                lastName: lastName,
+                photo: photo
+            }).save(function (err, data) {
+                console.log("new user created");
+                res.json(data);
+            });
+        }
+    });
+});
+            </pre>
+        </span>
+        <h3>
+            Description
+        </h3>
+        <p>Here in this code snippet I have shown the code for adding new user in the databse. It stores all the fields one by one and makes a json object which is inserted in the db.</p>
+        <div class="h4">
+            <h1>Source Code</h1>
+
+                <a href="../../fileview/Default.aspx?~/experiments/developeride/public/mongodb/adduser.html" target="_blank">View Source Code</a><hr />
+                <a href="../../fileview/Default.aspx?~/experiments/developeride/public/mongodb/js/newuser.js" target="_blank">Client Side javascript</a><hr />
+                <a href="../../fileview/Default.aspx?~/experiments/developeride/server.js">Server Side Javascript</a>
+                <hr />
+            <h1>Reference</h1>
+                Prof.Jose's Lecture
+        </div>
+    </div>
+</body>
+</html>
