@@ -1,0 +1,30 @@
+﻿
+    <div class="container">
+        
+       
+         <table class="table">
+            <caption ng-show="destinations"><h2>Tourist Attractions in the City</h2></caption>
+             <thead>
+                 <tr>
+                     <th>Attraction Name</th>
+                     <th>Catagory</th>
+                     <th>Attraction Tips</th>
+                     <th>Rating</th>
+                     <th>Photo</th>
+                     <th> </th>
+                 </tr>
+             </thead>
+            <tbody>
+
+                <tr ng-repeat="dest in destinations">
+                    <td>{{dest.venue.name}}</td>
+                    <td>{{dest.venue.categories[0].name}}</td>
+                    <td>{{dest.tips[0].text}}</td>
+                    <td>{{dest.venue.rating}}</td>
+                    <td><img class="poster" ng-src="{{dest.tips[0].photourl}}" width="100" /></td>
+                    <td><a href="#/details/{{dest.venue.name}}"><button class="btn btn-primary">Details</button></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+

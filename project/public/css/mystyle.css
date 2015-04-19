@@ -1,0 +1,33 @@
+﻿#comm {
+    background-color:wheat;
+    border:3px solid grey;
+    align-content:inherit;
+}
+#userinfo {
+    border:1.5px solid grey;
+    overflow-y:scroll hidden;
+    overflow-x:hidden;
+    background-color:lightblue;
+    align-content:center;
+}
+#likedobj {
+    border:1.5px solid grey;
+    overflow-y:scroll hidden;
+    background-color:#00ff90;
+    height:inherit;
+}
+#writtenreviews {
+    border-bottom:3px solid grey;
+    border-top:3px solid grey;
+    overflow-y:scroll hidden;
+    
+    background-color:wheat;
+}
+#reviews {
+    background-color:wheat;
+    border:1.5px solid grey;
+}
+#like {
+    border-bottom:3px solid grey;
+    border-top:3px solid grey;
+}
